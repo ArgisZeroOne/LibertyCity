@@ -25,6 +25,7 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
+                android:onClick="Click"
                 app:menu="@menu/toolbar_menu"
                 app:navigationIcon="?attr/homeAsUpIndicator"></androidx.appcompat.widget.Toolbar>
         </com.google.android.material.appbar.CollapsingToolbarLayout>
@@ -387,8 +388,8 @@
             android:layout_gravity="center_horizontal"
             android:layout_weight="1"
             android:onClick="Click"
-            android:src="@android:drawable/ic_input_add"
-            android:visibility="visible"
+            android:src="@drawable/baseline_save_black_48dp"
+            android:visibility="gone"
             app:fabSize="mini" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -398,8 +399,8 @@
             android:layout_gravity="center_horizontal"
             android:layout_weight="1"
             android:onClick="Click"
-            android:src="@android:drawable/ic_input_add"
-            android:visibility="visible"
+            android:src="@drawable/baseline_unarchive_black_48dp"
+            android:visibility="gone"
             app:fabSize="mini" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton

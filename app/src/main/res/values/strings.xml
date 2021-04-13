@@ -3,7 +3,7 @@
     <string name="toolbar_save">Сохранить</string>
     <string name="toolbar_load">Загрузить</string>
     <string name="toolbar_exit">Выйти</string>
-    <string name="app_name">Оплот коммунизма</string>
+    <string name="app_name">Город свободы</string>
     <string name="contract_shopcenter">Построить ТЦ(+15 счастье, +5 состояние города, -10000 кредитов, +8 кред/сек.</string>
     <string name="contract_houses">Построить микрорайон(+25 счастье, +15 состояние города, -25000 кредитов, +18 кред/сек.</string>
     <string name="contract_zk">Построить ЖК(+17 счастье, +10 состояние города, -18000 кредитов, +12 кред/сек.</string>
