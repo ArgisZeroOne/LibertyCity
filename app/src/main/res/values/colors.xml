@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#BB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="colorFAB">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="Yellow_600">#FFDE03</color>
+    <color name="Yellow_300">#FCF267</color>
+    <color name="Blue_500">#0336FF</color>
+    <color name="Blue_800">#0026EB</color>
+    <color name="gray">#121212</color>
+    <color name="red_pink">#CF6679</color>
+    <color name="grey_plus">#202020</color>
+    <color name="rally_green_primary">#1EB980</color>
+    <color name="rally_background">#33333d</color>
+    <color name="rally_surface">#373740</color>
+    <color name="rally_darkgreen">#045D56</color>
+    <color name="rally_orange">#FF6859</color>
+    <color name="rally_yellow">#FFCF44</color>
+    <color name="rally_purple">#B15DFF</color>
+    <color name="rally_blue">#72DEFF</color>
+
+</resources>

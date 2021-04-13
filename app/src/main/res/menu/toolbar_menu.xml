@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="@string/toolbar_save" />
+    <item
+        android:id="@+id/toolbar_load"
+        android:title="@string/toolbar_load" />
+    <item
+        android:id="@+id/toolbar_exit"
+        android:title="@string/toolbar_exit" />
+</menu>

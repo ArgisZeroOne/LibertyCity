@@ -1,0 +1,31 @@
+<resources>
+    <string name="title_gov">Правительство</string>
+    <string name="toolbar_save">Сохранить</string>
+    <string name="toolbar_load">Загрузить</string>
+    <string name="toolbar_exit">Выйти</string>
+    <string name="app_name">Оплот коммунизма</string>
+    <string name="contract_shopcenter">Построить ТЦ(+15 счастье, +5 состояние города, -10000 кредитов, +8 кред/сек.</string>
+    <string name="contract_houses">Построить микрорайон(+25 счастье, +15 состояние города, -25000 кредитов, +18 кред/сек.</string>
+    <string name="contract_zk">Построить ЖК(+17 счастье, +10 состояние города, -18000 кредитов, +12 кред/сек.</string>
+    <string name="contract_lunapark">Построить лунапарк(+20 счастье, +5 состояние города, -20000 кредитов, +15 кред/сек.</string>
+    <string name="finance_nalog">Собрать налоги(-5 счастье, +500 кредитов)</string>
+    <string name="finance_optimazation">Взять взятку(-10 счастье, +1500 кредитов, +15 подозрения)</string>
+    <string name="finance_pile">Распилить бюджет(-35 счастье, +10000 кредитов, +70 подозрения)</string>
+    <string name="finance_pin">Подключить нелегальные источники(-20 счастье, +5000 кредитов, +40 подозрения)</string>
+    <string name="create_roads">Прокладка дорог  (+7 счастье, + 10 состояние города, -1200 кредитов</string>
+    <string name="create_park">Разбить парк(+15 счастье, +3 состояние города, -700 кредитов</string>
+    <string name="create_vokzal">Построить вокзал(+10 счастье, +20 состояние города, -5000 кредитов, +5 кред/сек.</string>
+    <string name="create_zdroads">Прокладка ЖД путей(+5 счастье, +2 состояние города, -2500 кредитов, +2 кред/сек.</string>
+    <string name="title_finance">Финансы</string>
+    <string name="title_contract">Госконтракты</string>
+    <string name="title_create">Строительство</string>
+    <string name="title_care">Обслуживание</string>
+    <string name="care_roads">Обслуживание дорог (+5 счастье, +5 состояние города, -500 кредитов)</string>
+    <string name="care_street">Уборка улиц (+5 счастье, +2 состояние города, -150 кредитов)</string>
+    <string name="care_houses">Ремонт домов (+15 счастье, +10 состояние города, -1500 кредитов)</string>
+    <string name="care_water">Очистка водохранилищ (+5 счастье, +3 состояние города, -200 кредитов)</string>
+    <string name="games_computer">Играть в компьютер (-10 голода -10 бодрости +20 морали)</string>
+    <string name="games_table">Играть в настольные игры (-15 голода -15 бодрости +30 морали)</string>
+    <string name="games_phone">Играть в телефон (-5 голода -5 бодрости +10 морали)</string>
+    <string name="games_tournament">Участвовать в турнире (-20 голода -20 бодрости +30 морали +500 кредитов)</string>
+</resources>

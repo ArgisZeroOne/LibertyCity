@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_gov">
+
+    <fragment
+        android:id="@+id/navigation_care"
+        android:name="com.example.myapplication.ui.care.CareFragment"
+        android:label="@string/title_care"
+        tools:layout="@layout/fragment_care" />
+    <fragment
+        android:id="@+id/navigation_create"
+        android:name="com.example.myapplication.ui.create.CreateFragment"
+        android:label="@string/title_create"
+        tools:layout="@layout/fragment_create" />
+    <fragment
+        android:id="@+id/navigation_gov"
+        android:name="com.example.myapplication.ui.goverment.GovFragment"
+        android:label="@string/title_gov"
+        tools:layout="@layout/fragment_gov" />
+    <fragment
+        android:id="@+id/navigation_contract"
+        android:name="com.example.myapplication.ui.contract.ContractFragment"
+        android:label="@string/title_contract"
+        tools:layout="@layout/fragment_contract" />
+    <fragment
+        android:id="@+id/navigation_finance"
+        android:name="com.example.myapplication.ui.finance.FinanceFragment"
+        android:label="@string/title_finance"
+        tools:layout="@layout/fragment_finance" />
+
+
+</navigation>
