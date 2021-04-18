@@ -6,10 +6,9 @@
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray"
+    android:background="@color/rally_background"
     android:forceDarkAllowed="true"
     android:layerType="hardware"
-    android:paddingBottom="?attr/actionBarSize"
     app:statusBarBackground="#FFB300">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -61,7 +60,7 @@
                 android:layout_height="120dp"
                 android:layout_marginTop="8dp"
                 android:alpha="1"
-                android:backgroundTint="#202020"
+                android:backgroundTint="@color/rally_surface"
                 android:elevation="20dp"
                 android:fontFamily="@font/roboto_condensed_regular"
                 android:fontFeatureSettings="@string/app_name"
@@ -74,6 +73,7 @@
                 android:typeface="sans"
                 app:cornerRadius="10dp"
                 app:icon="@drawable/outline_nature_people_white_36dp"
+                app:iconTint="@color/rally_blue"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:layout_editor_absoluteX="0dp" />
 
@@ -82,7 +82,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:alpha="1"
-                android:backgroundTint="@color/grey_plus"
+                android:backgroundTint="@color/rally_surface"
                 android:fontFamily="@font/roboto_condensed_regular"
                 android:gravity="clip_horizontal|clip_vertical|fill"
                 android:onClick="Click"
@@ -92,6 +92,7 @@
                 android:typeface="sans"
                 app:cornerRadius="10dp"
                 app:icon="@drawable/outline_add_road_white_36dp"
+                app:iconTint="@color/rally_purple"
                 app:layout_constraintTop_toBottomOf="@+id/create_park"
                 tools:layout_editor_absoluteX="0dp" />
 
@@ -100,7 +101,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:alpha="1"
-                android:backgroundTint="@color/grey_plus"
+                android:backgroundTint="@color/rally_surface"
                 android:fontFamily="@font/roboto_condensed_regular"
                 android:gravity="clip_horizontal|clip_vertical|fill"
                 android:onClick="Click"
@@ -110,6 +111,7 @@
                 android:typeface="sans"
                 app:cornerRadius="10dp"
                 app:icon="@drawable/outline_train_white_36dp"
+                app:iconTint="@color/rally_orange"
                 app:layout_constraintTop_toBottomOf="@+id/create_roads"
                 tools:layout_editor_absoluteX="8dp" />
 
@@ -118,7 +120,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:alpha="1"
-                android:backgroundTint="@color/grey_plus"
+                android:backgroundTint="@color/rally_surface"
                 android:fontFamily="@font/roboto_condensed_regular"
                 android:gravity="clip_horizontal|clip_vertical|fill"
                 android:onClick="Click"
@@ -128,6 +130,7 @@
                 android:typeface="sans"
                 app:cornerRadius="10dp"
                 app:icon="@drawable/outline_hail_white_36dp"
+                app:iconTint="@color/rally_yellow"
                 app:layout_constraintTop_toBottomOf="@+id/create_zdroads"
                 tools:layout_editor_absoluteX="0dp" />
 

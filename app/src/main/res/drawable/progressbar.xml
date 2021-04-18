@@ -9,9 +9,9 @@
 
 
             <gradient
-                android:centerColor="#202020"
-                android:endColor="#202020"
-                android:startColor="#202020"
+                android:centerColor="@color/rally_surface"
+                android:endColor="@color/rally_surface"
+                android:startColor="@color/rally_surface"
                 android:type="sweep" />
         </shape>
     </item>
