@@ -4,19 +4,23 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.androidadvance.topsnackbar.TSnackbar;
-
+import java.time.Year;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class MenuActivity extends AppCompatActivity {
+public class DeadActivity extends AppCompatActivity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_dead);
+        getSupportActionBar().hide();
+    }
     private void saveArrayList(String name, ArrayList<String> list) {
         SharedPreferences prefs = getSharedPreferences("Records", MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
@@ -52,47 +56,37 @@ public class MenuActivity extends AppCompatActivity {
         }
         return ret;
     }
-    private static final String MY_SETTINGS = "my_settings";
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu);
-        getSupportActionBar().hide();
-        SharedPreferences sp = getSharedPreferences(MY_SETTINGS,
-                Context.MODE_PRIVATE);
-        // проверяем, первый ли раз открывается программа
-        boolean hasVisited = sp.getBoolean("hasVisited", false);
-        if (!hasVisited) {
-            int[] arry = getFromPrefs("records");
-            int[] inter = new int[arry.length + 1];
-            for (int i = 0; i < arry.length; i++){
-                inter[i] = arry[i];
-            };
-            inter[arry.length] = 0;
-            storeIntArray("records", inter);
-            EditText text = (EditText) findViewById(R.id.EnterName);
-            TextView txt =  (TextView) findViewById(R.id.textView2);
-            ArrayList<String> arr = loadArrayList("names");
-            arr.add("_NoName_");
-            TSnackbar.make(findViewById(android.R.id.content), "Had a snack at Snackbar", TSnackbar.LENGTH_LONG).show();
-            SharedPreferences.Editor e = sp.edit();
-            e.putBoolean("hasVisited", true);
-            e.commit(); // не забудьте подтвердить изменения
-        }
-    }
     public void onClick(View view){
         switch(view.getId()){
-            case R.id.start:
-                Intent intent_start = new Intent(MenuActivity.this, MainActivity.class);
-                startActivity(intent_start);
+            case R.id.restart_btn:
+                Intent intent_restart = new Intent(DeadActivity.this, MainActivity.class);
+                startActivity(intent_restart);
                 break;
-            case R.id.settings:
-                Intent intent_settings = new Intent(MenuActivity.this, RecordsActivity.class);
-                startActivity(intent_settings);
+            case R.id.record_btn:
+                int[] arry = getFromPrefs("records");
+                int[] inter = new int[arry.length + 1];
+                for (int i = 0; i < arry.length; i++){
+                    inter[i] = arry[i];
+                };
+                inter[arry.length] = MainActivity.Values.tempscore;
+                storeIntArray("records", inter);
+                EditText text = (EditText) findViewById(R.id.EnterName);
+                TextView txt =  (TextView) findViewById(R.id.textView2);
+                ArrayList<String> arr = loadArrayList("names");
+                arr.add(String.valueOf(text.getText()));
+                String catName = "";
+                for (int i = 0; i < arr.size(); i++) {
+                    catName = catName + arr.get(i) + " " + inter[i] + " ";
+                }
+                saveArrayList("names", arr);
+                txt.setText("Все коты: " + catName);
+                Intent intent_record = new Intent(DeadActivity.this, MainActivity.class);
+                startActivity(intent_record);
                 break;
-            case R.id.exit:
-                moveTaskToBack(true);
+            case R.id.exit_btn:
+                Intent intent_exit = new Intent(DeadActivity.this, MenuActivity.class);
+                startActivity(intent_exit);
                 break;
         }
     }
-
 }

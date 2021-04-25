@@ -12,24 +12,146 @@
         android:id="@+id/appbar"
 
         android:layout_width="match_parent"
-        android:layout_height="192dp">
+        android:layout_height="192dp"
+        android:alpha="1"
+        android:background="@color/rally_surface">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:contentScrim="?attr/colorPrimary"
+            android:alpha="1"
+
+            app:contentScrim="@color/rally_surface"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:toolbarId="@+id/toolbarfrag">
 
-            app:toolbarId="@+id/toolbar">
 
+            <Button
+                android:id="@+id/back_button"
+                android:layout_width="?attr/actionBarSize"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_gravity="top|left"
+                android:background="?attr/homeAsUpIndicator"
+                android:backgroundTint="#000000"
+                android:backgroundTintMode="multiply"
+                android:foreground="@drawable/abc_vector_test"
+                android:foregroundTint="@color/gray"
+                android:foregroundTintMode="src_in"
+                android:onClick="Click"
+                android:scaleX="0.5"
+                android:scaleY="0.5" />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/finance_back"
+                app:srcCompat="@drawable/finance_probe" />
 
             <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
+                android:id="@+id/toolbarfrag"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:menu="@menu/toolbar_menu"
-                app:navigationIcon="?attr/actionModeCloseDrawable"
+                app:subtitle="yg"
+                app:subtitleTextColor="@color/white"
                 app:title="@string/title_finance"></androidx.appcompat.widget.Toolbar>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutProgress"
+                android:layout_width="168dp"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_gravity="bottom|right|center_vertical|end"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cityprgs">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/citycond_tool"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ProgressBar
+                        android:id="@+id/citycond_prgsbar_tool"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:max="100"
+                        android:progress="0"
+                        android:progressBackgroundTintMode="add"
+                        android:progressDrawable="@drawable/progressbar"
+                        android:progressTint="@color/rally_green_primary"
+                        android:secondaryProgress="100"
+                        android:secondaryProgressTint="@color/rally_background"
+                        android:secondaryProgressTintMode="add"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/susp_tool"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ProgressBar
+                        android:id="@+id/susp_prgsbar_tool"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:max="100"
+                        android:progress="0"
+                        android:progressBackgroundTintMode="add"
+                        android:progressDrawable="@drawable/progressbar"
+                        android:progressTint="@color/rally_orange"
+                        android:secondaryProgress="100"
+                        android:secondaryProgressTint="@color/rally_background"
+                        android:secondaryProgressTintMode="add"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/happy_tool"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ProgressBar
+                        android:id="@+id/hppy_prgsbar_tool"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:max="100"
+                        android:progress="0"
+                        android:progressBackgroundTintMode="add"
+                        android:progressDrawable="@drawable/progressbar"
+                        android:progressTint="@color/rally_yellow"
+                        android:secondaryProgress="100"
+                        android:secondaryProgressTint="@color/rally_background"
+                        android:secondaryProgressTintMode="add"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -53,7 +175,7 @@
                 android:alpha="1"
                 android:backgroundTint="@color/rally_surface"
                 android:elevation="20dp"
-                android:fontFamily="@font/raleway_semibold"
+                android:fontFamily="@font/eczar_medium"
                 android:gravity="clip_horizontal|clip_vertical|start|fill"
                 android:onClick="Click"
                 android:scaleX="0.975"
@@ -73,7 +195,7 @@
                 android:layout_height="120dp"
                 android:alpha="1"
                 android:backgroundTint="@color/rally_surface"
-                android:fontFamily="@font/raleway_semibold"
+                android:fontFamily="@font/eczar_medium"
                 android:gravity="clip_horizontal|clip_vertical|fill"
                 android:onClick="Click"
                 android:scaleX="0.975"
@@ -92,7 +214,7 @@
                 android:layout_height="120dp"
                 android:alpha="1"
                 android:backgroundTint="@color/rally_surface"
-                android:fontFamily="@font/raleway_semibold"
+                android:fontFamily="@font/eczar_medium"
                 android:gravity="clip_horizontal|clip_vertical|fill"
                 android:onClick="Click"
                 android:scaleX="0.975"
@@ -111,7 +233,7 @@
                 android:layout_height="120dp"
                 android:alpha="1"
                 android:backgroundTint="@color/rally_surface"
-                android:fontFamily="@font/raleway_semibold"
+                android:fontFamily="@font/eczar_medium"
                 android:gravity="clip_horizontal|clip_vertical|fill"
                 android:onClick="Click"
                 android:scaleX="0.975"

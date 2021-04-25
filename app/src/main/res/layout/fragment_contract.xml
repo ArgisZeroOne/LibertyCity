@@ -6,30 +6,156 @@
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/rally_background">
+    android:background="@color/rally_background"
+    android:orientation="horizontal"
+    android:outlineProvider="background">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
 
         android:layout_width="match_parent"
-        android:layout_height="192dp">
+        android:layout_height="192dp"
+        android:background="@color/rally_surface">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:contentScrim="?attr/colorPrimary"
+
+            android:foreground="@color/Blue_800"
+            android:foregroundGravity="fill_horizontal"
+            android:foregroundTint="#DF000000"
+            android:foregroundTintMode="src_over"
+            app:contentScrim="@color/rally_surface"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
-
             app:title="@string/title_contract"
-            app:toolbarId="@+id/toolbar">
+            app:toolbarId="@+id/toolbarfrag">
 
+
+            <Button
+                android:id="@+id/back_button"
+                android:layout_width="?attr/actionBarSize"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_gravity="top|left"
+                android:background="?attr/homeAsUpIndicator"
+                android:backgroundTint="#000000"
+                android:backgroundTintMode="multiply"
+                android:foreground="@drawable/abc_vector_test"
+                android:foregroundTint="@color/gray"
+                android:foregroundTintMode="src_in"
+                android:onClick="Click"
+                android:scaleX="0.5"
+                android:scaleY="0.5" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00FA0000"
+                android:foregroundTint="#FF0000"
+                app:srcCompat="@drawable/contract_probe" />
 
             <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
+                android:id="@+id/toolbarfrag"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                app:menu="@menu/toolbar_menu"
-                app:navigationIcon="?attr/homeAsUpIndicator"></androidx.appcompat.widget.Toolbar>
+                app:menu="@menu/toolbar_menu"></androidx.appcompat.widget.Toolbar>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutProgress"
+                android:layout_width="168dp"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_gravity="bottom|right|center_vertical|end"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cityprgs">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/citycond_tool"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ProgressBar
+                        android:id="@+id/citycond_prgsbar_tool"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:max="100"
+                        android:progress="0"
+                        android:progressBackgroundTintMode="add"
+                        android:progressDrawable="@drawable/progressbar"
+                        android:progressTint="@color/rally_green_primary"
+                        android:secondaryProgress="100"
+                        android:secondaryProgressTint="@color/rally_background"
+                        android:secondaryProgressTintMode="add"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/susp_tool"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ProgressBar
+                        android:id="@+id/susp_prgsbar_tool"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:max="100"
+                        android:progress="0"
+                        android:progressBackgroundTintMode="add"
+                        android:progressDrawable="@drawable/progressbar"
+                        android:progressTint="@color/rally_orange"
+                        android:secondaryProgress="100"
+                        android:secondaryProgressTint="@color/rally_background"
+                        android:secondaryProgressTintMode="add"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/happy_tool"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ProgressBar
+                        android:id="@+id/hppy_prgsbar_tool"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:max="100"
+                        android:progress="0"
+                        android:progressBackgroundTintMode="add"
+                        android:progressDrawable="@drawable/progressbar"
+                        android:progressTint="@color/rally_yellow"
+                        android:secondaryProgress="100"
+                        android:secondaryProgressTint="@color/rally_background"
+                        android:secondaryProgressTintMode="add"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -53,14 +179,14 @@
                 android:alpha="1"
                 android:backgroundTint="@color/rally_surface"
                 android:elevation="20dp"
-                android:fontFamily="@font/raleway_semibold"
+                android:fontFamily="@font/electrolize"
                 android:gravity="clip_horizontal|clip_vertical|start|fill"
                 android:onClick="Click"
                 android:scaleX="0.975"
                 android:text="@string/contract_shopcenter"
                 android:textSize="14sp"
                 android:translationZ="10dp"
-                android:typeface="sans"
+                android:typeface="serif"
                 app:cornerRadius="10dp"
                 app:icon="@drawable/outline_store_black_36dp"
                 app:iconTint="@color/rally_blue"
@@ -80,7 +206,7 @@
                 android:scaleX="0.975"
                 android:text="@string/contract_zk"
                 android:textSize="14sp"
-                android:typeface="sans"
+                android:typeface="serif"
                 app:cornerRadius="10dp"
                 app:icon="@drawable/outline_domain_black_36dp"
                 app:iconTint="@color/rally_yellow"
@@ -94,13 +220,13 @@
                 android:layout_height="120dp"
                 android:alpha="1"
                 android:backgroundTint="@color/rally_surface"
-                android:fontFamily="@font/raleway_semibold"
+                android:fontFamily="@font/electrolize"
                 android:gravity="clip_horizontal|clip_vertical|fill"
                 android:onClick="Click"
                 android:scaleX="0.975"
                 android:text="@string/contract_lunapark"
                 android:textSize="14sp"
-                android:typeface="sans"
+                android:typeface="serif"
                 app:cornerRadius="10dp"
                 app:icon="@drawable/outline_attractions_black_36dp"
                 app:iconTint="@color/rally_orange"
@@ -114,13 +240,13 @@
                 android:layout_height="120dp"
                 android:alpha="1"
                 android:backgroundTint="@color/rally_surface"
-                android:fontFamily="@font/raleway_semibold"
+                android:fontFamily="@font/electrolize"
                 android:gravity="clip_horizontal|clip_vertical|fill"
                 android:onClick="Click"
                 android:scaleX="0.975"
                 android:text="@string/contract_houses"
                 android:textSize="14sp"
-                android:typeface="sans"
+                android:typeface="serif"
                 app:cornerRadius="10dp"
                 app:icon="@drawable/outline_location_city_white_36dp"
                 app:iconTint="@color/rally_purple"

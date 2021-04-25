@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class StartActivity extends AppCompatActivity {
+public class SamsungActivity extends AppCompatActivity {
 
     public void Timer(int view) {
 
@@ -20,7 +20,7 @@ public class StartActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                Intent intent = new Intent(StartActivity.this, SamsungActivity.class);
+                Intent intent = new Intent(SamsungActivity.this, MenuActivity.class);
                 startActivity(intent);
 
             }
@@ -28,7 +28,7 @@ public class StartActivity extends AppCompatActivity {
     }
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_start);
+        setContentView(R.layout.activity_samsung);
         getSupportActionBar().hide();
         Timer(R.layout.activity_start);
     }

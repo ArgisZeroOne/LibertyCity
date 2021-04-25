@@ -8,15 +8,18 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.androidadvance.topsnackbar.TSnackbar;
 import com.example.myapplication.MainActivity;
 import com.example.myapplication.R;
 
 public class GovFragment extends Fragment {
-    public void Timer(View root) {
+    public static void Timer(View root) {
+
         new CountDownTimer(60000, 1000) {
 
             @Override
@@ -31,6 +34,8 @@ public class GovFragment extends Fragment {
                 ProgressBar suspension = (ProgressBar) root.findViewById(R.id.susp_prgsbar);
                 ProgressBar cityhappy = (ProgressBar) root.findViewById(R.id.hppy_prgsbar);
                 ProgressBar citycondition = (ProgressBar) root.findViewById(R.id.citycond_prgsbar);
+                TextView citylevel = (TextView) root.findViewById(R.id.cityprgs_txt);
+                TextView scores = (TextView) root.findViewById(R.id.scores);
                 MainActivity.Values val = new MainActivity.Values();
                 String money_str = Integer.toString(val.money);
                 String trsrycsts_str = Integer.toString(val.salary + val.taxessalary - val.constantpays - val.centerpays);
@@ -38,33 +43,54 @@ public class GovFragment extends Fragment {
                 String taxespay_str = Integer.toString(val.taxessalary);
                 String centerpay_str = Integer.toString(val.centerpays);
                 String constpay_str = Integer.toString(val.constantpays);
+                String citylevel_str = Integer.toString(val.citylevel);
+                String scores_str = Integer.toString(val.scores);
                 trsrycsts.setText("Поступления: " + trsrycsts_str);
-                money.setText("Итого в казне: " + money_str);
+                scores.setText("Очки: " + scores_str);
+                 money.setText("Итого в казне: " + money_str);
                 salary.setText("Выручка: + " + salary_str);
                 taxespay.setText("Налоги: + " + taxespay_str);
+                citylevel.setText("Уровень города: " + citylevel_str);
                 centerpay.setText("Отчисления в центр: - " + centerpay_str);
                 constpay.setText("Постоянные: - " + constpay_str);
-                cityprogress.setProgress(val.cityprogress);
+               cityprogress.setProgress(val.cityprogress);
                 cityhappy.setProgress((int)val.cityhappy);
                 citycondition.setProgress((int)val.citycondition);
                 suspension.setProgress(val.suspension);
-                MainActivity.Values.cityhappy -=0.25;
-                MainActivity.Values.citycondition -=0.25;
+                ProgressBar suspension_tool = (ProgressBar) root.findViewById(R.id.susp_prgsbar_tool);
+                ProgressBar cityhappy_tool = (ProgressBar) root.findViewById(R.id.hppy_prgsbar_tool);
+                ProgressBar citycondition_tool = (ProgressBar) root.findViewById(R.id.citycond_prgsbar_tool);
+                cityhappy_tool.setProgress((int)val.cityhappy);
+                citycondition_tool.setProgress((int)val.citycondition);
+                suspension_tool.setProgress(val.suspension);
+                Toolbar toolbar = (Toolbar) root.findViewById(R.id.toolbarfrag);
+
+                if (val.hungry == true && val.angry == true){
+                    toolbar.setSubtitle("Город заброшен и народ зол");
+                } else if (val.hungry == true && val.angry == false){
+                    toolbar.setSubtitle("Город заброшен, народ снисходителен");
+                } else if (val.hungry == false && val.angry == true){
+                    toolbar.setSubtitle("Город ухожен, народ зол");
+                } else if (val.hungry == false && val.angry == false){
+                    toolbar.setSubtitle("Город чист, народ счастлив");
+                }
             }
 
             @Override
             public void onFinish() {
-                MainActivity.Values.suspension += 5;
                 Timer(root);
             }
         }.start();
 
     }
-
+    private Toolbar toolbar;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_gov, container, false);
-        Timer(root);
+
+        toolbar = root.findViewById(R.id.toolbarfrag);
+
+      Timer(root);
         return root;
     }
 

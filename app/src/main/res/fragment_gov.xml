@@ -6,174 +6,48 @@
     android:layout_height="match_parent"
     android:background="@color/rally_background"
     android:backgroundTintMode="add"
-    android:orientation="vertical"
-    tools:menu="@menu/toolbar_menu">
+    android:orientation="vertical">
 
     <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appbar"
+        android:id="@+id/appmenubar"
+
         android:layout_width="match_parent"
         android:layout_height="192dp"
-        android:background="@color/rally_surface"
-        app:expanded="true">
+        android:background="@color/rally_surface">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:backgroundTint="#DF000000"
-            android:layoutMode="opticalBounds"
+            android:background="@drawable/finance"
             app:contentScrim="@color/rally_surface"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:title="@string/title_gov"
-            app:toolbarId="@+id/toolbarfrag">
 
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/gov_back"
-                app:srcCompat="@drawable/gov_probe" />
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:toolbarId="@+id/menubar">
+
 
             <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbarfrag"
+                android:id="@+id/menubar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:clickable="false"
-                android:contextClickable="true"
-                android:hapticFeedbackEnabled="true"
-                android:onClick="Click"
-                app:menu="@menu/toolbar_menu"></androidx.appcompat.widget.Toolbar>
-
-            <Button
-                android:id="@+id/back_button"
-                android:layout_width="?attr/actionBarSize"
-                android:layout_height="?attr/actionBarSize"
-                android:layout_gravity="top|left"
-                android:background="?attr/homeAsUpIndicator"
-                android:backgroundTint="#000000"
-                android:backgroundTintMode="multiply"
-                android:foreground="@drawable/abc_vector_test"
-                android:foregroundTint="@color/gray"
-                android:foregroundTintMode="src_in"
-                android:onClick="Click"
-                android:scaleX="0.5"
-                android:scaleY="0.5" />
-
-            <LinearLayout
-                android:id="@+id/linearLayoutProgress"
-                android:layout_width="168dp"
-                android:layout_height="?attr/actionBarSize"
-                android:layout_gravity="bottom|right|center_vertical|end"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/cityprgs">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/citycond_tool"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
-
-                    <ProgressBar
-                        android:id="@+id/citycond_prgsbar_tool"
-                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="150dp"
-                        android:layout_weight="1"
-                        android:max="100"
-                        android:progress="0"
-                        android:progressBackgroundTintMode="add"
-                        android:progressDrawable="@drawable/progressbar"
-                        android:progressTint="@color/rally_green_primary"
-                        android:secondaryProgress="100"
-                        android:secondaryProgressTint="@color/rally_background"
-                        android:secondaryProgressTintMode="add"
-                        android:visibility="visible"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/susp_tool"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
-
-                    <ProgressBar
-                        android:id="@+id/susp_prgsbar_tool"
-                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="150dp"
-                        android:layout_weight="1"
-                        android:max="100"
-                        android:progress="0"
-                        android:progressBackgroundTintMode="add"
-                        android:progressDrawable="@drawable/progressbar"
-                        android:progressTint="@color/rally_orange"
-                        android:secondaryProgress="100"
-                        android:secondaryProgressTint="@color/rally_background"
-                        android:secondaryProgressTintMode="add"
-                        android:visibility="visible"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/happy_tool"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
-
-                    <ProgressBar
-                        android:id="@+id/hppy_prgsbar_tool"
-                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="150dp"
-                        android:layout_weight="1"
-                        android:max="100"
-                        android:progress="0"
-                        android:progressBackgroundTintMode="add"
-                        android:progressDrawable="@drawable/progressbar"
-                        android:progressTint="@color/rally_yellow"
-                        android:secondaryProgress="100"
-                        android:secondaryProgressTint="@color/rally_background"
-                        android:secondaryProgressTintMode="add"
-                        android:visibility="visible"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </LinearLayout>
-
+                app:menu="@menu/toolbar_menu"
+                app:navigationIcon="?attr/actionModeCloseDrawable"
+                app:title="@string/title_finance"></androidx.appcompat.widget.Toolbar>
         </com.google.android.material.appbar.CollapsingToolbarLayout>
-
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/rally_background"
-        android:scrollbars="vertical"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/rally_background"
+            android:layout_height="wrap_content"
             tools:context=".ui.care.CareFragment">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardView7"
+                android:id="@+id/cardView"
                 android:layout_width="match_parent"
                 android:layout_height="130dp"
                 android:layout_marginTop="8dp"
@@ -190,23 +64,12 @@
                 android:layout_height="match_parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <TextView
-                    android:id="@+id/scores"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="32dp"
-                    android:fontFamily="@font/electrolize"
-                    app:layout_constraintBottom_toTopOf="@+id/upgr_btn"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toStartOf="parent" />
-
                 <Button
                     android:id="@+id/upgr_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="64dp"
                     android:backgroundTint="@color/rally_blue"
-                    android:fontFamily="@font/electrolize"
+                    android:fontFamily="@font/raleway_semibold"
                     android:foregroundTint="#00D31313"
                     android:insetLeft="0dp"
                     android:insetTop="0dp"
@@ -226,7 +89,8 @@
                     android:id="@+id/cityprgs_txt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/electrolize"
+                    android:fontFamily="@font/raleway_semibold"
+                    android:text="Развитие города"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
@@ -245,8 +109,7 @@
                     android:progressBackgroundTintMode="src_in"
                     android:progressDrawable="@drawable/progressbar"
                     android:progressTint="@color/rally_blue"
-                    android:secondaryProgress="100"
-                    android:secondaryProgressTint="@color/rally_background"
+                    android:secondaryProgressTint="@color/rally_darkgreen"
                     android:secondaryProgressTintMode="add"
                     android:visibility="visible"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -260,7 +123,7 @@
                 android:id="@+id/cardView"
                 android:layout_width="match_parent"
                 android:layout_height="130dp"
-                android:background="@color/rally_surface"
+                android:background="@color/grey_plus"
                 android:scaleX="0.975"
                 app:cardBackgroundColor="@color/rally_surface"
                 app:cardCornerRadius="12dp"
@@ -277,7 +140,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="32dp"
                         android:layout_marginEnd="8dp"
-                        android:fontFamily="@font/electrolize"
+                        android:fontFamily="@font/raleway_semibold"
                         android:textSize="14sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="@id/tax_txt" />
@@ -288,7 +151,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:layout_marginEnd="8dp"
-                        android:fontFamily="@font/electrolize"
+                        android:fontFamily="@font/raleway_semibold"
                         android:textSize="14sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -298,7 +161,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:fontFamily="@font/days_one"
+                        android:fontFamily="@font/raleway_semibold"
                         android:text="Прибыль:"
                         android:textSize="24sp"
                         app:layout_constraintStart_toStartOf="parent"
@@ -329,7 +192,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:layout_marginEnd="8dp"
-                        android:fontFamily="@font/electrolize"
+                        android:fontFamily="@font/raleway_semibold"
                         android:text="Отчисления в центр: - 9999 рублей"
                         android:textSize="14sp"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -341,7 +204,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="32dp"
                         android:layout_marginEnd="8dp"
-                        android:fontFamily="@font/electrolize"
+                        android:fontFamily="@font/raleway_semibold"
                         android:text="Постоянные: 8800555 рублей"
                         android:textSize="14sp"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -352,7 +215,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:fontFamily="@font/electrolize"
+                        android:fontFamily="@font/raleway_semibold"
                         android:text="Затраты:"
                         android:textSize="24sp"
                         app:layout_constraintStart_toStartOf="parent"
@@ -383,7 +246,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:layout_marginEnd="8dp"
-                        android:fontFamily="@font/electrolize"
+                        android:fontFamily="@font/raleway_semibold"
                         android:text="Поступления: 999 рублей"
                         android:textSize="14sp"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -395,7 +258,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="32dp"
                         android:layout_marginEnd="8dp"
-                        android:fontFamily="@font/electrolize"
+                        android:fontFamily="@font/raleway_semibold"
                         android:text="Итого в казне: 15000 рублей"
                         android:textSize="14sp"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -406,7 +269,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:fontFamily="@font/electrolize"
+                        android:fontFamily="@font/raleway_semibold"
                         android:text="Казна:"
                         android:textSize="24sp"
                         app:layout_constraintStart_toStartOf="parent"
@@ -416,7 +279,7 @@
 
             <LinearLayout
                 android:id="@+id/linearLayout"
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -433,7 +296,7 @@
                         android:id="@+id/citycond_txt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/electrolize"
+                        android:fontFamily="@font/raleway_semibold"
                         android:text="Cостояние"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -452,9 +315,6 @@
                         android:progressBackgroundTintMode="add"
                         android:progressDrawable="@drawable/progressbar"
                         android:progressTint="@color/rally_green_primary"
-                        android:secondaryProgress="100"
-                        android:secondaryProgressTint="@color/rally_background"
-                        android:secondaryProgressTintMode="add"
                         android:visibility="visible"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -473,7 +333,7 @@
                         android:id="@+id/susp_txt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/electrolize"
+                        android:fontFamily="@font/raleway_semibold"
                         android:text="Подозрение"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -492,9 +352,6 @@
                         android:progressBackgroundTintMode="add"
                         android:progressDrawable="@drawable/progressbar"
                         android:progressTint="@color/rally_orange"
-                        android:secondaryProgress="100"
-                        android:secondaryProgressTint="@color/rally_background"
-                        android:secondaryProgressTintMode="add"
                         android:visibility="visible"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -513,7 +370,7 @@
                         android:id="@+id/hppy_txt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/electrolize"
+                        android:fontFamily="@font/raleway_semibold"
                         android:text="Счастье"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -532,9 +389,6 @@
                         android:progressBackgroundTintMode="add"
                         android:progressDrawable="@drawable/progressbar"
                         android:progressTint="@color/rally_yellow"
-                        android:secondaryProgress="100"
-                        android:secondaryProgressTint="@color/rally_background"
-                        android:secondaryProgressTintMode="add"
                         android:visibility="visible"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -546,54 +400,7 @@
             </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </androidx.core.widget.NestedScrollView>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:clickable="true"
-        android:foregroundGravity="fill_horizontal"
-        android:gravity="fill_horizontal"
-        android:orientation="vertical"
-        android:paddingEnd="8dp"
-        android:paddingBottom="8dp"
-        android:visibility="gone">
-
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/minifab1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="1"
-            android:onClick="Click"
-            android:src="@drawable/baseline_save_black_48dp"
-            android:visibility="gone"
-            app:fabSize="mini" />
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/minifab2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="1"
-            android:onClick="Click"
-            android:src="@drawable/baseline_unarchive_black_48dp"
-            android:visibility="gone"
-            app:fabSize="mini" />
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/mainfab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="1"
-            android:onClick="Click"
-            android:src="@android:drawable/ic_input_add"
-            android:visibility="visible" />
-    </LinearLayout>
 
 
     "
