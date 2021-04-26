@@ -17,7 +17,7 @@ public class RecordsActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_records);
 
-        MyMonthAdapter adapter = new MyMonthAdapter(this, makeMonth());
+        RecordsAdapter adapter = new RecordsAdapter(this, makeRecord());
         ListView lv = (ListView) findViewById(R.id.listView);
         lv.setAdapter(adapter);
     }
@@ -38,56 +38,58 @@ public class RecordsActivity extends Activity {
         list.addAll(Arrays.asList(strings));
         return list;
     }
-    public void storeIntArray(String name, int[] array){
+
+    public void storeIntArray(String name, int[] array) {
         SharedPreferences.Editor edit = getSharedPreferences("NAME", Context.MODE_PRIVATE).edit();
         edit.putInt("Count_" + name, array.length);
         int count = 0;
-        for (int i: array){
+        for (int i : array) {
             edit.putInt("IntValue_" + name + count++, i);
         }
         edit.commit();
     }
-    public int[] getFromPrefs(String name){
+
+    public int[] getFromPrefs(String name) {
         int[] ret;
         SharedPreferences prefs = getSharedPreferences("NAME", Context.MODE_PRIVATE);
         int count = prefs.getInt("Count_" + name, 0);
         ret = new int[count];
-        for (int i = 0; i < count; i++){
-            ret[i] = prefs.getInt("IntValue_"+ name + i, i);
+        for (int i = 0; i < count; i++) {
+            ret[i] = prefs.getInt("IntValue_" + name + i, i);
         }
         return ret;
     }
-    // Метод cоздания массива месяцев
-    MyMonth[] makeMonth() {
+
+    MyRecords[] makeRecord() {
 
 
-// Названия месяцев
-        String[] monthArr = loadArrayList("names").toArray(new String[0]);
-        int[] dayArr = getFromPrefs("records");
-        int[] scrfornames = new int[monthArr.length];
-        for (int i = 0; i < scrfornames.length; i++){
-            scrfornames[i] = dayArr[i];
-        };
-        MyMonth[] arr = new MyMonth[monthArr.length];
+        String[] namesArr = loadArrayList("names").toArray(new String[0]);
+        int[] scrArr = getFromPrefs("records");
+        int[] scrfornames = new int[namesArr.length];
+        for (int i = 0; i < scrfornames.length; i++) {
+            scrfornames[i] = scrArr[i];
+        }
+        ;
+        MyRecords[] arr = new MyRecords[namesArr.length];
 
-// Сборка месяцев
-        for (int i = 0; i < monthArr.length; i++) {
-            MyMonth month = new MyMonth();
-            month.name = monthArr[i];
-            month.score = scrfornames[i];
-            arr[i] = month;
+        for (int i = 0; i < namesArr.length; i++) {
+            MyRecords records = new MyRecords();
+            records.name = namesArr[i];
+            records.score = scrfornames[i];
+
+            arr[i] = records;
         }
 
-        /*for (int i = 0; i < dayArr.length; i++) {
-            for (int j = 0; j < dayArr.length - 1; j++) {
+         for (int i = 0; i < scrArr.length; i++) {
+            for (int j = 0; j < scrArr.length - 1; j++) {
                 if (arr[j].score < arr[j + 1].score) {
-                    MyMonth temp = new MyMonth();
+                    MyRecords temp = new MyRecords();
                     temp = arr[j];
                     arr[j] = arr[j + 1];
                     arr[j + 1] = temp;
                 }
             }
-        }*/
+        }
         return arr;
     }
 }

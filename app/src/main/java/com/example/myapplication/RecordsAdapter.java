@@ -9,24 +9,24 @@ import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class MyMonthAdapter extends ArrayAdapter<MyMonth> {
+public class RecordsAdapter extends ArrayAdapter<MyRecords> {
 
-    public MyMonthAdapter(Context context, MyMonth[] arr) {
+    public RecordsAdapter(Context context, MyRecords[] arr) {
         super(context, R.layout.adapter_item, arr);
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        final MyMonth month = getItem(position);
+        final MyRecords records = getItem(position);
 
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.adapter_item, null);
         }
 
-// Заполняем адаптер
-       ((TextView) convertView.findViewById(R.id.textView)).setText(month.name);
-    ((TextView) convertView.findViewById(R.id.textView2)).setText(String.valueOf(month.score));
+
+        ((TextView) convertView.findViewById(R.id.textView)).setText(records.name);
+        ((TextView) convertView.findViewById(R.id.textView2)).setText(String.valueOf(records.score));
 
         return convertView;
     }

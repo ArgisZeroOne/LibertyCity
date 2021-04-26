@@ -1,5 +1,5 @@
 package com.example.myapplication;
-public class MyMonth {
+public class MyRecords {
     String name = "NoName"; // Название месяца
     int score =0; // Количество дней
 
