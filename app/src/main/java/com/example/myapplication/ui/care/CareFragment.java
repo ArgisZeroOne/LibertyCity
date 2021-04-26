@@ -37,8 +37,8 @@ public class CareFragment extends Fragment {
                 ProgressBar suspension_tool = (ProgressBar) root.findViewById(R.id.susp_prgsbar_tool);
                 ProgressBar cityhappy_tool = (ProgressBar) root.findViewById(R.id.hppy_prgsbar_tool);
                 ProgressBar citycondition_tool = (ProgressBar) root.findViewById(R.id.citycond_prgsbar_tool);
-                cityhappy_tool.setProgress((int)val.cityhappy);
-                citycondition_tool.setProgress((int)val.citycondition);
+                cityhappy_tool.setProgress((int) val.cityhappy);
+                citycondition_tool.setProgress((int) val.citycondition);
                 suspension_tool.setProgress(val.suspension);
             }
 

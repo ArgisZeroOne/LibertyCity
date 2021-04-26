@@ -80,7 +80,7 @@ public class RecordsActivity extends Activity {
             arr[i] = records;
         }
 
-         for (int i = 0; i < scrArr.length; i++) {
+        for (int i = 0; i < scrArr.length; i++) {
             for (int j = 0; j < scrArr.length - 1; j++) {
                 if (arr[j].score < arr[j + 1].score) {
                     MyRecords temp = new MyRecords();

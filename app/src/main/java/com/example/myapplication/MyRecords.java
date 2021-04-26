@@ -1,6 +1,7 @@
 package com.example.myapplication;
+
 public class MyRecords {
-    String name = "NoName"; // Название месяца
-    int score =0; // Количество дней
+    String name = "NoName";
+    int score = 0;
 
 }

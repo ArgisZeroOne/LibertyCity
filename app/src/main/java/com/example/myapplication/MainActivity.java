@@ -26,6 +26,7 @@ import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
     SharedPreferences mySettings;
+
     private void saveArrayList(String name, ArrayList<String> list) {
         SharedPreferences prefs = getSharedPreferences("Records", MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         list.addAll(Arrays.asList(strings));
         return list;
     }
+
     public class Settings {
         public static final String APP_PREFERENCES = "mysettings";
         public static final String APP_PREFERENCES_globalscore = "globalscore";
@@ -61,7 +63,9 @@ public class MainActivity extends AppCompatActivity {
         public static final String APP_PREFERENCES_angry = "angry";
 
     }
+
     Settings settings = new Settings();
+
     public static class Values {
         public static boolean fabactive = false;
         public static float cityhappy = 50;
@@ -186,7 +190,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     protected void onDestroy() {
-        //stop service and stop music
+
         SaveValues();
         super.onDestroy();
     }
