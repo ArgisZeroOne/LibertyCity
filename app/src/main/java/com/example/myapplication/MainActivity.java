@@ -156,7 +156,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                Values.Interval += 250;
+                Values.Interval -= 50;
                 Values.money -= (Values.centerpays + Values.constantpays);
                 Values.scores += 2 * Values.citylevel;
                 Values.globalscore += 2 * Values.citylevel;
@@ -288,6 +288,7 @@ public class MainActivity extends AppCompatActivity {
                     Values.taxessalary += 1;
                     Values.centerpays += 3;
                     Values.suspension = 0;
+                    Values.Interval += 100;
                 } else {
                     TSnackbar.make(navView, "Недостаточно прогресса", TSnackbar.LENGTH_LONG).show();
                 }
