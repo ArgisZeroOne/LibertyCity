@@ -6,14 +6,44 @@
     android:layout_height="match_parent"
     android:background="@color/rally_background">
 
-    <ListView
-        android:id="@+id/listView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+    <Button
+        android:id="@+id/back_button2"
+        android:layout_width="?attr/actionBarSize"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_gravity="start"
+        android:background="?attr/homeAsUpIndicator"
+        android:foreground="@drawable/abc_vector_test"
+        android:foregroundTintMode="src_in"
+        android:onClick="Click"
+        android:scaleX="0.5"
+        android:scaleY="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarfrag2"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/rally_surface"
+        android:clickable="false"
+        android:contextClickable="true"
+        android:gravity="center_horizontal"
+        android:hapticFeedbackEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/title_record"
+        app:titleMarginStart="56dp"></androidx.appcompat.widget.Toolbar>
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarfrag2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

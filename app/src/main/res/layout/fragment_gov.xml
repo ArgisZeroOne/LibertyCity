@@ -19,7 +19,7 @@
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:backgroundTint="#DF000000"
+            android:backgroundTint="@color/rally_surface"
             android:layoutMode="opticalBounds"
             app:contentScrim="@color/rally_surface"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
@@ -52,7 +52,6 @@
                 android:backgroundTint="#000000"
                 android:backgroundTintMode="multiply"
                 android:foreground="@drawable/abc_vector_test"
-                android:foregroundTint="@color/gray"
                 android:foregroundTintMode="src_in"
                 android:onClick="Click"
                 android:scaleX="0.5"

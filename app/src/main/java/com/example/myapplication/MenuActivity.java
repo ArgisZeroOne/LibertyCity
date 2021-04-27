@@ -95,6 +95,9 @@ public class MenuActivity extends AppCompatActivity {
                 Intent intent_settings = new Intent(MenuActivity.this, RecordsActivity.class);
                 startActivity(intent_settings);
                 break;
+            case R.id.store:
+                TSnackbar.make(view,"В разработке", TSnackbar.LENGTH_SHORT).show();
+                break;
             case R.id.exit:
                 moveTaskToBack(true);
                 break;

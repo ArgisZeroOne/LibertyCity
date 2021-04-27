@@ -40,7 +40,6 @@
                 android:backgroundTint="#000000"
                 android:backgroundTintMode="multiply"
                 android:foreground="@drawable/abc_vector_test"
-                android:foregroundTint="@color/gray"
                 android:foregroundTintMode="src_in"
                 android:onClick="Click"
                 android:scaleX="0.5"

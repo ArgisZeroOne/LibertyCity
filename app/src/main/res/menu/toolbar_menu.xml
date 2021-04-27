@@ -2,14 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/toolbar_save"
+        android:icon="@drawable/baseline_save_black_48dp"
         android:onClick="onSettingsMenuClick"
         android:title="@string/toolbar_save" />
     <item
         android:id="@+id/toolbar_load"
+        android:icon="@drawable/baseline_unarchive_black_48dp"
         android:onClick="onSettingsMenuClick"
         android:title="@string/toolbar_load" />
     <item
         android:id="@+id/toolbar_exit"
+        android:icon="@drawable/ic_home_black_24dp"
         android:onClick="onSettingsMenuClick"
         android:title="@string/toolbar_exit" />
 </menu>

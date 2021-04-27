@@ -5,6 +5,7 @@
     <string name="toolbar_exit">Выйти</string>
     <string name="app_name">Город свободы</string>
     <string name="Tick">Тик</string>
+    <string name="title_record">Рекорды</string>
     <string name="low_happy">Уровень счастья очень низок</string>
     <string name="low_cond">Уровень состояния города очень низок</string>
     <string name="high_susp">Уровень подозрения очень высок</string>
