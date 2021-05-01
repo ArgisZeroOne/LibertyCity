@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.text.Layout;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -12,10 +13,13 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 
 import com.androidadvance.topsnackbar.TSnackbar;
+import com.example.myapplication.ui.goverment.GovFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -23,6 +27,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Timer;
 
 public class MainActivity extends AppCompatActivity {
     SharedPreferences mySettings;
@@ -61,6 +66,12 @@ public class MainActivity extends AppCompatActivity {
         public static final String APP_PREFERENCES_Interval = "Interval";
         public static final String APP_PREFERENCES_hungry = "hungry";
         public static final String APP_PREFERENCES_angry = "angry";
+        public static final String APP_PREFERENCES_store_houses = "store_houses";
+        public static final String APP_PREFERENCES_store_zdroads = "store_zdroads";
+        public static final String APP_PREFERENCES_store_vokzal = "store_vokzal";
+        public static final String APP_PREFERENCES_store_zk = "store_zk";
+        public static final String APP_PREFERENCES_store_lunapark = "store_lunapark";
+        public static final String APP_PREFERENCES_store_interval = "store_interval";
 
     }
 
@@ -84,6 +95,15 @@ public class MainActivity extends AppCompatActivity {
         public static boolean angry = false;
         public static int globalscore = 0;
         public static int tempscore = 0;
+        public static boolean DeadStatus = false;
+        public static int store_houses = 0;
+        public static int store_zdroads = 0;
+        public static int store_vokzal = 0;
+        public static int store_zk = 0;
+        public static int store_lunapark = 0;
+        public static int store_interval = 0;
+        public static boolean StopStatus = false;
+
     }
 
     public void SaveValues() {
@@ -103,10 +123,17 @@ public class MainActivity extends AppCompatActivity {
         editor.putString(settings.APP_PREFERENCES_Interval, String.valueOf(Values.Interval));
         editor.putString(settings.APP_PREFERENCES_angry, String.valueOf(Values.angry));
         editor.putString(settings.APP_PREFERENCES_hungry, String.valueOf(Values.hungry));
+        editor.putString(settings.APP_PREFERENCES_store_houses, String.valueOf(Values.store_houses));
+        editor.putString(settings.APP_PREFERENCES_store_zdroads, String.valueOf(Values.store_zdroads));
+        editor.putString(settings.APP_PREFERENCES_store_vokzal, String.valueOf(Values.store_vokzal));
+        editor.putString(settings.APP_PREFERENCES_store_zk, String.valueOf(Values.store_zk));
+        editor.putString(settings.APP_PREFERENCES_store_lunapark, String.valueOf(Values.store_lunapark));
+        editor.putString(settings.APP_PREFERENCES_store_interval, String.valueOf(Values.store_interval));
         editor.apply();
     }
 
     public void LoadValues() {
+        String interval = String.valueOf(1000 + Integer.parseInt(mySettings.getString(settings.APP_PREFERENCES_store_interval, "0")));
         Values.cityhappy = Float.parseFloat(mySettings.getString(settings.APP_PREFERENCES_cityhappy, "50"));
         Values.globalscore = Integer.parseInt(mySettings.getString(settings.APP_PREFERENCES_globalscore, "0"));
         Values.citycondition = Float.parseFloat(mySettings.getString(settings.APP_PREFERENCES_citycondition, "50"));
@@ -119,52 +146,122 @@ public class MainActivity extends AppCompatActivity {
         Values.constantpays = Integer.parseInt(mySettings.getString(settings.APP_PREFERENCES_constantpays, "2"));
         Values.citylevel = Integer.parseInt(mySettings.getString(settings.APP_PREFERENCES_citylevel, "1"));
         Values.scores = Integer.parseInt(mySettings.getString(settings.APP_PREFERENCES_scores, "0"));
-        Values.Interval = Integer.parseInt(mySettings.getString(settings.APP_PREFERENCES_Interval, "1000"));
+        Values.Interval = Integer.parseInt(mySettings.getString(settings.APP_PREFERENCES_Interval, interval));
         Values.angry = Boolean.parseBoolean(mySettings.getString(settings.APP_PREFERENCES_angry, "false"));
         Values.hungry = Boolean.parseBoolean(mySettings.getString(settings.APP_PREFERENCES_hungry, "false"));
+        Values.store_houses = Integer.parseInt(mySettings.getString(settings.APP_PREFERENCES_store_houses, "0"));
+        Values.store_zdroads = Integer.parseInt(mySettings.getString(settings.APP_PREFERENCES_store_zdroads, "0"));
+        Values.store_vokzal = Integer.parseInt(mySettings.getString(settings.APP_PREFERENCES_store_vokzal, "0"));
+        Values.store_zk = Integer.parseInt(mySettings.getString(settings.APP_PREFERENCES_store_zk, "0"));
+        Values.store_lunapark = Integer.parseInt(mySettings.getString(settings.APP_PREFERENCES_store_lunapark, "0"));
+        Values.store_interval = Integer.parseInt(mySettings.getString(settings.APP_PREFERENCES_store_interval, "0"));
     }
 
-    public void suspTime() {
+    public void suspTime(View navView) {
 
         new CountDownTimer(10000, 1000) {
 
             @Override
             public void onTick(long l) {
                 Values.suspension -= 1;
+                EventHandler(navView);
             }
 
             @Override
             public void onFinish() {
-                suspTime();
+
             }
         }.start();
     }
 
-    public void Timer(View navView) {
+    public void Timer(View navView, int interval) {
 
-        new CountDownTimer(10000, Values.Interval) {
-
+        CountDownTimer timer = new CountDownTimer(2000, interval) {
             @Override
             public void onTick(long l) {
-                EventHandler(navView);
-                Values.money += (Values.salary + Values.taxessalary - Values.constantpays);
-                Values.scores += 1 * Values.citylevel;
-                Values.globalscore += 1 * Values.citylevel;
-                Values.cityhappy -= 0.5;
-                Values.citycondition -= 0.5;
+                if (Values.DeadStatus || Values.StopStatus) {
+                    return;
+                } else {
+                    EventHandler(navView);
+                    Values.money += (Values.salary + Values.taxessalary - Values.constantpays) + Store();
+                    Values.scores += 1 * Values.citylevel;
+                    Values.globalscore += 1 * Values.citylevel;
+                    Values.cityhappy -= 0.5;
+                    Values.citycondition -= 0.5;
+                }
+
             }
 
             @Override
             public void onFinish() {
-                Values.Interval -= 50;
-                Values.money -= (Values.centerpays + Values.constantpays);
-                Values.scores += 2 * Values.citylevel;
-                Values.globalscore += 2 * Values.citylevel;
-                Timer(navView);
+                if (Values.DeadStatus || Values.StopStatus) {
+                    Timer(navView, interval);
+                } else {
+                    EventHandler(navView);
+                    Values.Interval -= 10;
+                    Timer(navView, interval);
+                }
+
             }
-        }.start();
+        };
+
+        timer.start();
+        if (Values.DeadStatus) {
+            timer.cancel();
+            dead();
+            return;
+        }
+        if (Values.StopStatus) {
+            timer.cancel();
+            SaveValues();
+            return;
+        }
+
     }
 
+    @Override
+    public void onBackPressed() {
+    }
+
+    protected void onStart() {
+        super.onStart();
+        Values.StopStatus = true;
+    }
+
+    protected void onRestart() {
+        super.onRestart();
+        Values.StopStatus = true;
+    }
+
+    protected void onStop() {
+        super.onStop();
+        Values.StopStatus = true;
+    }
+
+    protected void onPause() {
+        super.onPause();
+        Values.StopStatus = true;
+        SaveValues();
+    }
+
+    protected void onResume() {
+        super.onResume();
+        Values.StopStatus = false;
+        LoadValues();
+        suspTime(findViewById(android.R.id.content));
+        Timer(findViewById(android.R.id.content), Values.Interval);
+    }
+
+    protected void onDestroy() {
+        super.onDestroy();
+        Values.StopStatus = true;
+        SaveValues();
+    }
+
+    public int Store() {
+        int store_value = Values.store_houses + Values.store_lunapark + Values.store_vokzal + Values.store_zdroads + Values.store_zk;
+        return store_value;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -176,32 +273,12 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
-        Timer(navView);
-        suspTime();
         SharedPreferences sharedPreferences = getSharedPreferences(settings.APP_PREFERENCES, 0);
         mySettings = sharedPreferences;
         LoadValues();
-
     }
 
-    protected void onPause() {
-        super.onPause();
-        SaveValues();
-    }
-
-    protected void onDestroy() {
-
-        SaveValues();
-        super.onDestroy();
-    }
-
-    protected void onResume() {
-        super.onResume();
-        LoadValues();
-    }
-
-
-    public void dead(View navView) {
+    public void dead() {
         Values.tempscore = Values.scores;
         Values.cityhappy = 50;
         Values.citycondition = 50;
@@ -217,9 +294,12 @@ public class MainActivity extends AppCompatActivity {
         Values.Interval = 1000;
         Values.angry = false;
         Values.hungry = false;
+        Values.DeadStatus = false;
         SaveValues();
         Intent intent = new Intent(MainActivity.this, DeadActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
+        this.finish();
 
     }
 
@@ -251,16 +331,19 @@ public class MainActivity extends AppCompatActivity {
             Values.hungry = false;
         }
         if (Values.citycondition <= 0) {
-            dead(navView);
+            Values.DeadStatus = true;
+        }
+        if (Values.Interval <= 0) {
+            Values.DeadStatus = true;
         }
         if (Values.cityhappy <= 0) {
-            dead(navView);
+            Values.DeadStatus = true;
         }
         if (Values.suspension >= 100) {
-            dead(navView);
+            Values.DeadStatus = true;
         }
         if (Values.money <= 0) {
-            dead(navView);
+            Values.DeadStatus = true;
         }
 
     }
@@ -272,11 +355,17 @@ public class MainActivity extends AppCompatActivity {
             Button upgr_btn = (Button) findViewById(R.id.upgr_btn);
             ProgressBar city_progress = (ProgressBar) findViewById(R.id.cityprgs_prgsbar);
         }
-
+        NavController navControl = Navigation.findNavController(this, R.id.nav_host_fragment);
         ClickObj objctsClick = new ClickObj();
         switch (navView.getId()) {
-            case R.id.back_button:
-                this.onBackPressed();
+
+            case R.id.back_button_to_gov:
+                navControl.navigate(R.id.navigation_gov, null);
+                break;
+            case R.id.back_button_to_menu:
+                Values.StopStatus = true;
+                Intent intent_menu = new Intent(MainActivity.this, MenuActivity.class);
+                startActivity(intent_menu);
                 break;
             case R.id.upgr_btn:
 

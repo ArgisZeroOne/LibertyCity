@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/rally_background">
+
+    <Button
+        android:id="@+id/store_back"
+        android:layout_width="?attr/actionBarSize"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_gravity="top|left"
+        android:background="?attr/homeAsUpIndicator"
+        android:backgroundTint="#000000"
+        android:backgroundTintMode="multiply"
+        android:foreground="@drawable/abc_vector_test"
+        android:foregroundTintMode="src_in"
+        android:onClick="Click"
+        android:scaleX="0.5"
+        android:scaleY="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+
+        android:layout_marginTop="56dp"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarfrag3">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.care.CareFragment">
+
+            <Button
+                android:id="@+id/store_interval"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginTop="8dp"
+                android:alpha="1"
+                android:backgroundTint="@color/rally_surface"
+                android:elevation="20dp"
+                android:fontFamily="@font/eczar_medium"
+                android:gravity="clip_horizontal|clip_vertical|start|fill"
+                android:onClick="Click"
+                android:scaleX="0.975"
+                android:text="@string/store_interval"
+                android:textSize="14sp"
+                android:translationZ="10dp"
+                android:typeface="sans"
+                app:cornerRadius="10dp"
+                app:iconTint="@color/rally_blue"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <Button
+                android:id="@+id/store_lunapark"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:alpha="1"
+                android:backgroundTint="@color/rally_surface"
+                android:fontFamily="@font/eczar_medium"
+                android:gravity="clip_horizontal|clip_vertical|fill"
+                android:onClick="Click"
+                android:scaleX="0.975"
+                android:text="@string/store_lunapark"
+                android:textSize="14sp"
+                android:typeface="sans"
+                app:cornerRadius="10dp"
+                app:iconTint="@color/rally_yellow"
+                app:layout_constraintTop_toBottomOf="@id/store_interval"
+                app:rippleColor="@color/rally_yellow"
+                tools:layout_editor_absoluteX="26dp" />
+
+            <Button
+                android:id="@+id/store_houses"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:alpha="1"
+                android:backgroundTint="@color/rally_surface"
+                android:fontFamily="@font/eczar_medium"
+                android:gravity="clip_horizontal|clip_vertical|fill"
+                android:onClick="Click"
+                android:scaleX="0.975"
+                android:text="@string/store_houses"
+                android:textSize="14sp"
+                android:typeface="sans"
+                app:cornerRadius="10dp"
+                app:iconTint="@color/rally_orange"
+                app:layout_constraintTop_toBottomOf="@id/store_lunapark"
+                app:rippleColor="@color/rally_orange"
+                tools:layout_editor_absoluteX="8dp" />
+
+            <Button
+                android:id="@+id/store_vokzal"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:alpha="1"
+                android:backgroundTint="@color/rally_surface"
+                android:fontFamily="@font/eczar_medium"
+                android:gravity="clip_horizontal|clip_vertical|fill"
+                android:onClick="Click"
+                android:scaleX="0.975"
+                android:text="@string/store_vokzal"
+                android:textSize="14sp"
+                android:typeface="sans"
+                app:cornerRadius="10dp"
+                app:iconTint="@color/rally_purple"
+                app:layout_constraintTop_toBottomOf="@id/store_houses"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <Button
+                android:id="@+id/store_zdroads"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:alpha="1"
+                android:backgroundTint="@color/rally_surface"
+                android:fontFamily="@font/eczar_medium"
+                android:gravity="clip_horizontal|clip_vertical|fill"
+                android:onClick="Click"
+                android:scaleX="0.975"
+                android:text="@string/store_zdroads"
+                android:textSize="14sp"
+                android:typeface="sans"
+                app:cornerRadius="10dp"
+                app:iconTint="@color/rally_purple"
+                app:layout_constraintTop_toBottomOf="@id/store_vokzal"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <Button
+                android:id="@+id/store_zk"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:alpha="1"
+                android:backgroundTint="@color/rally_surface"
+                android:fontFamily="@font/eczar_medium"
+                android:gravity="clip_horizontal|clip_vertical|fill"
+                android:onClick="Click"
+                android:scaleX="0.975"
+                android:text="@string/store_zk"
+                android:textSize="14sp"
+                android:typeface="sans"
+                app:cornerRadius="10dp"
+                app:iconTint="@color/rally_purple"
+                app:layout_constraintTop_toBottomOf="@id/store_zdroads"
+                tools:layout_editor_absoluteX="0dp" />
+
+
+            <TextView
+                android:id="@+id/text_notifications"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarfrag3"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/rally_surface"
+        android:backgroundTintMode="src_in"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Магазин"
+        app:titleMarginStart="56dp"></androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/store_score"
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center_vertical"
+        android:text="Очков: 0"
+        app:layout_constraintEnd_toEndOf="@+id/toolbarfrag3"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

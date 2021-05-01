@@ -44,7 +44,7 @@
                 app:menu="@menu/toolbar_menu"></androidx.appcompat.widget.Toolbar>
 
             <Button
-                android:id="@+id/back_button"
+                android:id="@+id/back_button_to_menu"
                 android:layout_width="?attr/actionBarSize"
                 android:layout_height="?attr/actionBarSize"
                 android:layout_gravity="top|left"

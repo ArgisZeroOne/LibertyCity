@@ -61,6 +61,7 @@ public class DeadActivity extends AppCompatActivity {
             case R.id.restart_btn:
                 Intent intent_restart = new Intent(DeadActivity.this, MainActivity.class);
                 startActivity(intent_restart);
+                this.finish();
                 break;
             case R.id.record_btn:
                 int[] arry = getFromPrefs("records");
@@ -71,7 +72,6 @@ public class DeadActivity extends AppCompatActivity {
                 inter[arry.length] = MainActivity.Values.tempscore;
                 storeIntArray("records", inter);
                 EditText text = (EditText) findViewById(R.id.EnterName);
-                TextView txt =  (TextView) findViewById(R.id.textView2);
                 ArrayList<String> arr = loadArrayList("names");
                 arr.add(String.valueOf(text.getText()));
                 String catName = "";
@@ -79,13 +79,14 @@ public class DeadActivity extends AppCompatActivity {
                     catName = catName + arr.get(i) + " " + inter[i] + " ";
                 }
                 saveArrayList("names", arr);
-                txt.setText("Все коты: " + catName);
                 Intent intent_record = new Intent(DeadActivity.this, MainActivity.class);
                 startActivity(intent_record);
+                this.finish();
                 break;
             case R.id.exit_btn:
                 Intent intent_exit = new Intent(DeadActivity.this, MenuActivity.class);
                 startActivity(intent_exit);
+                this.finish();
                 break;
         }
     }

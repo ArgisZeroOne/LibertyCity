@@ -50,12 +50,14 @@ public class FinanceFragment extends Fragment {
         }.start();
 
     }
-
+    public static View view;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View games_view = inflater.inflate(fragment_finance, container, false);
         Timer(games_view);
+        view = games_view;
         return games_view;
     }
+
 
 }

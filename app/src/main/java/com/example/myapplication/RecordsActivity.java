@@ -2,10 +2,19 @@ package com.example.myapplication;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.ProgressBar;
+
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -59,7 +68,16 @@ public class RecordsActivity extends Activity {
         }
         return ret;
     }
+    public void Click(View navView) {
 
+        switch (navView.getId()) {
+
+            case R.id.back_button:
+                Intent intent_menu = new Intent(RecordsActivity.this, MenuActivity.class);
+                startActivity(intent_menu);
+                break;
+        }
+    }
     MyRecords[] makeRecord() {
 
 

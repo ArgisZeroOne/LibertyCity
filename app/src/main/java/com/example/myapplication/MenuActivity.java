@@ -78,7 +78,6 @@ public class MenuActivity extends AppCompatActivity {
             TextView txt = (TextView) findViewById(R.id.textView2);
             ArrayList<String> arr = loadArrayList("names");
             arr.add("_NoName_");
-            TSnackbar.make(findViewById(android.R.id.content), "Had a snack at Snackbar", TSnackbar.LENGTH_LONG).show();
             SharedPreferences.Editor e = sp.edit();
             e.putBoolean("hasVisited", true);
             e.commit();
@@ -96,7 +95,8 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(intent_settings);
                 break;
             case R.id.store:
-                TSnackbar.make(view,"В разработке", TSnackbar.LENGTH_SHORT).show();
+                Intent intent_store = new Intent(MenuActivity.this, StoreActivity.class);
+                startActivity(intent_store);
                 break;
             case R.id.exit:
                 moveTaskToBack(true);

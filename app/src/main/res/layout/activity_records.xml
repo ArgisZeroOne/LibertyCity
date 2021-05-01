@@ -7,7 +7,7 @@
     android:background="@color/rally_background">
 
     <Button
-        android:id="@+id/back_button2"
+        android:id="@+id/back_button"
         android:layout_width="?attr/actionBarSize"
         android:layout_height="?attr/actionBarSize"
         android:layout_gravity="start"

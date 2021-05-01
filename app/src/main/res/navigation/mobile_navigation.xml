@@ -12,7 +12,11 @@
         tools:layout="@layout/fragment_care" >
         <action
             android:id="@+id/action_navigation_care_to_navigation_gov"
-            app:destination="@id/navigation_gov" />
+            app:destination="@id/navigation_gov"
+            app:enterAnim="@anim/alpha"
+            app:exitAnim="@anim/alpha"
+            app:popEnterAnim="@anim/alpha"
+            app:popExitAnim="@anim/alpha" />
     </fragment>
     <fragment
         android:id="@+id/navigation_create"
@@ -21,26 +25,14 @@
         tools:layout="@layout/fragment_create" >
         <action
             android:id="@+id/action_navigation_create_to_navigation_gov"
-            app:destination="@id/navigation_gov" />
+            app:destination="@id/navigation_gov"
+            app:enterAnim="@anim/alpha" />
     </fragment>
     <fragment
         android:id="@+id/navigation_gov"
         android:name="com.example.myapplication.ui.goverment.GovFragment"
         android:label="@string/title_gov"
-        tools:layout="@layout/fragment_gov" >
-        <action
-            android:id="@+id/action_navigation_gov_to_navigation_create"
-            app:destination="@id/navigation_create" />
-        <action
-            android:id="@+id/action_navigation_gov_to_navigation_care"
-            app:destination="@id/navigation_care" />
-        <action
-            android:id="@+id/action_navigation_gov_to_navigation_finance"
-            app:destination="@id/navigation_finance" />
-        <action
-            android:id="@+id/action_navigation_gov_to_navigation_contract"
-            app:destination="@id/navigation_contract" />
-    </fragment>
+        tools:layout="@layout/fragment_gov" />
     <fragment
         android:id="@+id/navigation_contract"
         android:name="com.example.myapplication.ui.contract.ContractFragment"
@@ -48,7 +40,11 @@
         tools:layout="@layout/fragment_contract" >
         <action
             android:id="@+id/action_navigation_contract_to_navigation_gov"
-            app:destination="@id/navigation_gov" />
+            app:destination="@id/navigation_gov"
+            app:enterAnim="@anim/alpha"
+            app:exitAnim="@anim/alpha"
+            app:popEnterAnim="@anim/alpha"
+            app:popExitAnim="@anim/alpha" />
     </fragment>
     <fragment
         android:id="@+id/navigation_finance"
@@ -57,7 +53,8 @@
         tools:layout="@layout/fragment_finance" >
         <action
             android:id="@+id/action_navigation_finance_to_navigation_gov"
-            app:destination="@id/navigation_gov" />
+            app:destination="@id/navigation_gov"
+            app:enterAnim="@anim/alpha" />
     </fragment>
 
 
