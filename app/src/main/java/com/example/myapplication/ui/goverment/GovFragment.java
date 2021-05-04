@@ -38,8 +38,8 @@ public class GovFragment extends Fragment {
                 TextView scores = (TextView) root.findViewById(R.id.scores);
                 MainActivity.Values val = new MainActivity.Values();
                 String money_str = Integer.toString(val.money);
-                String trsrycsts_str = Integer.toString(val.salary + val.taxessalary - val.constantpays - val.centerpays);
-                String salary_str = Integer.toString(val.salary);
+                String trsrycsts_str = Integer.toString(val.salary + val.taxessalary - val.constantpays - val.centerpays + MainActivity.Store());
+                String salary_str = Integer.toString(val.salary + MainActivity.Store());
                 String taxespay_str = Integer.toString(val.taxessalary);
                 String centerpay_str = Integer.toString(val.centerpays);
                 String constpay_str = Integer.toString(val.constantpays);
@@ -65,15 +65,6 @@ public class GovFragment extends Fragment {
                 suspension_tool.setProgress(val.suspension);
                 Toolbar toolbar = (Toolbar) root.findViewById(R.id.toolbarfrag);
 
-                if (val.hungry == true && val.angry == true){
-                    toolbar.setSubtitle("Город заброшен и народ зол");
-                } else if (val.hungry == true && val.angry == false){
-                    toolbar.setSubtitle("Город заброшен, народ снисходителен");
-                } else if (val.hungry == false && val.angry == true){
-                    toolbar.setSubtitle("Город ухожен, народ зол");
-                } else if (val.hungry == false && val.angry == false){
-                    toolbar.setSubtitle("Город чист, народ счастлив");
-                }
             }
 
             @Override

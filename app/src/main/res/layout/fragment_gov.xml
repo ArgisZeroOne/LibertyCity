@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/rally_background"
+    android:background="@color/background"
     android:backgroundTintMode="add"
     android:orientation="vertical"
     tools:menu="@menu/toolbar_menu">
@@ -13,145 +13,36 @@
         android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="192dp"
-        android:background="@color/rally_surface"
-        app:expanded="true">
+        android:background="#ffeb3b"
+        android:nestedScrollingEnabled="false"
+        android:visibility="gone"
+        app:expanded="false"
+        app:liftOnScroll="false">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:backgroundTint="@color/rally_surface"
+            android:backgroundTint="#ffeb3b"
             android:layoutMode="opticalBounds"
-            app:contentScrim="@color/rally_surface"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            android:nestedScrollingEnabled="false"
+            app:collapsedTitleGravity="left|center_vertical"
+            app:contentScrim="#ffeb3b"
+            app:expandedTitleMarginBottom="2dp"
+            app:expandedTitleTextAppearance="@style/TextAppearance.AppCompat.Small"
+            app:layout_scrollFlags="noScroll|scroll|enterAlways|exitUntilCollapsed|snap"
             app:title="@string/title_gov"
             app:toolbarId="@+id/toolbarfrag">
 
             <ImageView
                 android:id="@+id/imageView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/gov_back"
-                app:srcCompat="@drawable/gov_probe" />
-
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbarfrag"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:clickable="false"
-                android:contextClickable="true"
-                android:hapticFeedbackEnabled="true"
-                android:onClick="Click"
-                app:menu="@menu/toolbar_menu"></androidx.appcompat.widget.Toolbar>
-
-            <Button
-                android:id="@+id/back_button_to_menu"
-                android:layout_width="?attr/actionBarSize"
-                android:layout_height="?attr/actionBarSize"
-                android:layout_gravity="top|left"
-                android:background="?attr/homeAsUpIndicator"
-                android:backgroundTint="#000000"
-                android:backgroundTintMode="multiply"
-                android:foreground="@drawable/abc_vector_test"
-                android:foregroundTintMode="src_in"
-                android:onClick="Click"
-                android:scaleX="0.5"
-                android:scaleY="0.5" />
-
-            <LinearLayout
-                android:id="@+id/linearLayoutProgress"
-                android:layout_width="168dp"
-                android:layout_height="?attr/actionBarSize"
-                android:layout_gravity="bottom|right|center_vertical|end"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/cityprgs">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/citycond_tool"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
-
-                    <ProgressBar
-                        android:id="@+id/citycond_prgsbar_tool"
-                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="150dp"
-                        android:layout_weight="1"
-                        android:max="100"
-                        android:progress="0"
-                        android:progressBackgroundTintMode="add"
-                        android:progressDrawable="@drawable/progressbar"
-                        android:progressTint="@color/rally_green_primary"
-                        android:secondaryProgress="100"
-                        android:secondaryProgressTint="@color/rally_background"
-                        android:secondaryProgressTintMode="add"
-                        android:visibility="visible"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/susp_tool"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
-
-                    <ProgressBar
-                        android:id="@+id/susp_prgsbar_tool"
-                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="150dp"
-                        android:layout_weight="1"
-                        android:max="100"
-                        android:progress="0"
-                        android:progressBackgroundTintMode="add"
-                        android:progressDrawable="@drawable/progressbar"
-                        android:progressTint="@color/rally_orange"
-                        android:secondaryProgress="100"
-                        android:secondaryProgressTint="@color/rally_background"
-                        android:secondaryProgressTintMode="add"
-                        android:visibility="visible"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/happy_tool"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
-
-                    <ProgressBar
-                        android:id="@+id/hppy_prgsbar_tool"
-                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="150dp"
-                        android:layout_weight="1"
-                        android:max="100"
-                        android:progress="0"
-                        android:progressBackgroundTintMode="add"
-                        android:progressDrawable="@drawable/progressbar"
-                        android:progressTint="@color/rally_yellow"
-                        android:secondaryProgress="100"
-                        android:secondaryProgressTint="@color/rally_background"
-                        android:secondaryProgressTintMode="add"
-                        android:visibility="visible"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </LinearLayout>
+                android:layout_height="match_parent"
+                android:background="@drawable/gov_back"
+                android:backgroundTint="#EBEBEB"
+                android:foreground="@drawable/gov_back"
+                android:foregroundTint="#000000"
+                android:scaleX="1.03"
+                app:srcCompat="@drawable/gov_probe" />
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
@@ -161,14 +52,15 @@
         android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/rally_background"
+        android:layout_marginTop="56dp"
+        android:background="@color/background"
         android:scrollbars="vertical"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/rally_background"
+            android:background="#EFEFEF"
             tools:context=".ui.care.CareFragment">
 
             <androidx.cardview.widget.CardView
@@ -243,10 +135,9 @@
                     android:progressBackgroundTint="@color/rally_surface"
                     android:progressBackgroundTintMode="src_in"
                     android:progressDrawable="@drawable/progressbar"
-                    android:progressTint="@color/rally_blue"
+                    android:progressTint="#00b0ff"
                     android:secondaryProgress="100"
-                    android:secondaryProgressTint="@color/rally_background"
-                    android:secondaryProgressTintMode="add"
+                    android:secondaryProgressTint="#69E2FF"
                     android:visibility="visible"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -261,7 +152,7 @@
                 android:layout_height="130dp"
                 android:background="@color/rally_surface"
                 android:scaleX="0.975"
-                app:cardBackgroundColor="@color/rally_surface"
+                app:cardBackgroundColor="#FFFFFF"
                 app:cardCornerRadius="12dp"
                 app:layout_constraintTop_toBottomOf="@id/linearLayout">
 
@@ -297,9 +188,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:fontFamily="@font/days_one"
+                        android:fontFamily="@font/font1"
                         android:text="Прибыль:"
                         android:textSize="24sp"
+                        android:typeface="normal"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -313,7 +205,7 @@
                 android:layout_marginTop="8dp"
                 android:background="@color/grey_plus"
                 android:scaleX="0.975"
-                app:cardBackgroundColor="@color/rally_surface"
+                app:cardBackgroundColor="#FFFFFF"
                 app:cardCornerRadius="12dp"
                 app:layout_constraintTop_toBottomOf="@+id/cardView">
 
@@ -366,7 +258,7 @@
                 android:layout_marginTop="8dp"
                 android:background="@color/grey_plus"
                 android:scaleX="0.975"
-                app:cardBackgroundColor="@color/rally_surface"
+                app:cardBackgroundColor="#FFFFFF"
                 app:cardCornerRadius="12dp"
                 app:layout_constraintTop_toBottomOf="@+id/cardView2"
                 tools:layout_editor_absoluteX="9dp">
@@ -450,10 +342,9 @@
                         android:progress="0"
                         android:progressBackgroundTintMode="add"
                         android:progressDrawable="@drawable/progressbar"
-                        android:progressTint="@color/rally_green_primary"
+                        android:progressTint="#00b0ff"
                         android:secondaryProgress="100"
-                        android:secondaryProgressTint="@color/rally_background"
-                        android:secondaryProgressTintMode="add"
+                        android:secondaryProgressTint="#69E2FF"
                         android:visibility="visible"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -490,10 +381,9 @@
                         android:progress="0"
                         android:progressBackgroundTintMode="add"
                         android:progressDrawable="@drawable/progressbar"
-                        android:progressTint="@color/rally_orange"
+                        android:progressTint="#00b0ff"
                         android:secondaryProgress="100"
-                        android:secondaryProgressTint="@color/rally_background"
-                        android:secondaryProgressTintMode="add"
+                        android:secondaryProgressTint="#69E2FF"
                         android:visibility="visible"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -530,10 +420,9 @@
                         android:progress="0"
                         android:progressBackgroundTintMode="add"
                         android:progressDrawable="@drawable/progressbar"
-                        android:progressTint="@color/rally_yellow"
+                        android:progressTint="#00b0ff"
                         android:secondaryProgress="100"
-                        android:secondaryProgressTint="@color/rally_background"
-                        android:secondaryProgressTintMode="add"
+                        android:secondaryProgressTint="#69E2FF"
                         android:visibility="visible"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -548,50 +437,124 @@
 
     </androidx.core.widget.NestedScrollView>
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarfrag"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#ffeb3b"
+        android:clickable="false"
+        android:contextClickable="true"
+        android:hapticFeedbackEnabled="true"
+        android:onClick="Click"
+        app:menu="@menu/toolbar_menu"
+        app:subtitleTextColor="#ffeb3b"
+        app:title="@string/title_gov"
+        app:titleMarginStart="56dp"></androidx.appcompat.widget.Toolbar>
+
+    <Button
+        android:id="@+id/back_button_to_menu"
+        android:layout_width="?attr/actionBarSize"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_gravity="top|left"
+        android:background="@drawable/abc_vector_test"
+        android:backgroundTint="#FF0000"
+        android:backgroundTintMode="multiply"
+        android:foreground="@drawable/abc_vector_test"
+        android:foregroundTint="#000000"
+        android:foregroundTintMode="src_in"
+        android:onClick="Click"
+        android:scaleX="0.5"
+        android:scaleY="0.5" />
+
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:clickable="true"
-        android:foregroundGravity="fill_horizontal"
-        android:gravity="fill_horizontal"
-        android:orientation="vertical"
-        android:paddingEnd="8dp"
-        android:paddingBottom="8dp"
-        android:visibility="gone">
+        android:id="@+id/linearLayoutProgress"
+        android:layout_width="168dp"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_gravity="right|top"
+        android:layout_marginRight="40dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cityprgs">
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/citycond_tool"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/minifab1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="1"
-            android:onClick="Click"
-            android:src="@drawable/baseline_save_black_48dp"
-            android:visibility="gone"
-            app:fabSize="mini" />
+            <ProgressBar
+                android:id="@+id/citycond_prgsbar_tool"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:max="100"
+                android:progress="0"
+                android:progressDrawable="@drawable/progressbar"
+                android:progressTint="@color/blue"
+                android:secondaryProgress="100"
+                android:secondaryProgressTint="@color/blue_light"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/minifab2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="1"
-            android:onClick="Click"
-            android:src="@drawable/baseline_unarchive_black_48dp"
-            android:visibility="gone"
-            app:fabSize="mini" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/susp_tool"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/mainfab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="1"
-            android:onClick="Click"
-            android:src="@android:drawable/ic_input_add"
-            android:visibility="visible" />
+            <ProgressBar
+                android:id="@+id/susp_prgsbar_tool"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:max="100"
+                android:progress="0"
+                android:progressDrawable="@drawable/progressbar"
+                android:progressTint="@color/blue"
+                android:secondaryProgress="100"
+                android:secondaryProgressTint="@color/blue_light"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/happy_tool"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ProgressBar
+                android:id="@+id/hppy_prgsbar_tool"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:max="100"
+                android:progress="0"
+                android:progressDrawable="@drawable/progressbar"
+                android:progressTint="@color/blue"
+                android:secondaryProgress="100"
+                android:secondaryProgressTint="@color/blue_light"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
     </LinearLayout>
 
 

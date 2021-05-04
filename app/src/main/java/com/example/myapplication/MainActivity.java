@@ -258,7 +258,7 @@ public class MainActivity extends AppCompatActivity {
         SaveValues();
     }
 
-    public int Store() {
+    public static int Store() {
         int store_value = Values.store_houses + Values.store_lunapark + Values.store_vokzal + Values.store_zdroads + Values.store_zk;
         return store_value;
     }
@@ -350,8 +350,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void Click(View navView) {
         class ClickObj {
-            FloatingActionButton frst_secondfab = (FloatingActionButton) findViewById(R.id.minifab1);
-            FloatingActionButton sec_secondfab = (FloatingActionButton) findViewById(R.id.minifab2);
+
             Button upgr_btn = (Button) findViewById(R.id.upgr_btn);
             ProgressBar city_progress = (ProgressBar) findViewById(R.id.cityprgs_prgsbar);
         }
@@ -515,17 +514,7 @@ public class MainActivity extends AppCompatActivity {
                 Values.suspension -= 1;
                 EventHandler(navView);
                 break;
-            case R.id.mainfab:
-                if (Values.fabactive == true) {
-                    objctsClick.frst_secondfab.setVisibility(View.GONE);
-                    objctsClick.sec_secondfab.setVisibility(View.GONE);
-                    Values.fabactive = false;
-                } else if (Values.fabactive == false) {
-                    objctsClick.frst_secondfab.setVisibility(View.VISIBLE);
-                    objctsClick.sec_secondfab.setVisibility(View.VISIBLE);
-                    Values.fabactive = true;
-                }
-                break;
+
             default:
 
                 break;
