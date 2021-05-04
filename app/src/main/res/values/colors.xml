@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="purple_200">#BB86FC</color>
+    <color name="background">#EFEFEF</color>
+    <color name="yellow">#ffeb3b</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
@@ -18,6 +20,8 @@
     <color name="rally_green_primary">#1EB980</color>
     <color name="rally_background">#33333d</color>
     <color name="rally_surface">#373740</color>
+    <color name="blue">#00b0ff</color>
+    <color name="blue_light">#69e2ff</color>
     <color name="rally_darkgreen">#045D56</color>
     <color name="rally_orange">#FF6859</color>
     <color name="rally_yellow">#FFCF44</color>

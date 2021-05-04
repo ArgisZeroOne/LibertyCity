@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:alpha="1"
         android:animateLayoutChanges="true"
-        android:background="#373740"
+        android:background="#ffeb3b"
         android:elevation="12dp"
         android:forceDarkAllowed="true"
         app:elevation="12dp"

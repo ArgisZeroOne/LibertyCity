@@ -25,15 +25,6 @@ public class CareFragment extends Fragment {
             public void onTick(long l) {
                 MainActivity.Values val = new MainActivity.Values();
                 Toolbar toolbar = (Toolbar) root.findViewById(R.id.toolbarfrag);
-                if (val.hungry == true && val.angry == true) {
-                    toolbar.setSubtitle("Город заброшен и народ зол");
-                } else if (val.hungry == true && val.angry == false) {
-                    toolbar.setSubtitle("Город заброшен, народ снисходителен");
-                } else if (val.hungry == false && val.angry == true) {
-                    toolbar.setSubtitle("Город ухожен, народ зол");
-                } else if (val.hungry == false && val.angry == false) {
-                    toolbar.setSubtitle("Город чист, народ счастлив");
-                }
                 ProgressBar suspension_tool = (ProgressBar) root.findViewById(R.id.susp_prgsbar_tool);
                 ProgressBar cityhappy_tool = (ProgressBar) root.findViewById(R.id.hppy_prgsbar_tool);
                 ProgressBar citycondition_tool = (ProgressBar) root.findViewById(R.id.citycond_prgsbar_tool);

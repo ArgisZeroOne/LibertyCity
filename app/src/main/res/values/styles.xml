@@ -14,5 +14,7 @@
         <item name="android:activityOpenEnterAnimation">@anim/alpha</item>
 
     </style>
-
+<style name="text" parent="TextAppearance.AppCompat.Small">
+    <item name="android:textColor">@color/yellow</item>
+</style>
  </resources>
