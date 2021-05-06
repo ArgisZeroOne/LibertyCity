@@ -4,14 +4,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.androidadvance.topsnackbar.TSnackbar;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -86,11 +83,15 @@ public class MenuActivity extends AppCompatActivity {
 
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.about:
+                Intent intent_about = new Intent(MenuActivity.this, AboutActivity.class);
+                startActivity(intent_about);
+                break;
             case R.id.start:
                 Intent intent_start = new Intent(MenuActivity.this, MainActivity.class);
                 startActivity(intent_start);
                 break;
-            case R.id.settings:
+            case R.id.records:
                 Intent intent_settings = new Intent(MenuActivity.this, RecordsActivity.class);
                 startActivity(intent_settings);
                 break;
@@ -101,6 +102,7 @@ public class MenuActivity extends AppCompatActivity {
             case R.id.exit:
                 moveTaskToBack(true);
                 break;
+
         }
     }
 

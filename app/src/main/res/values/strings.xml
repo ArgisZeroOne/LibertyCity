@@ -5,6 +5,7 @@
     <string name="toolbar_exit">Выйти</string>
     <string name="app_name">Город свободы</string>
     <string name="Tick">Тик</string>
+    <string name="title_about">О Игре</string>
     <string name="store_interval">Купить 100мс интервала. Цена: 1000 очков.</string>
     <string name="store_houses">Купить микрорайон. (+18 кред/сек) Цена: 1000 очков.</string>
     <string name="store_zk">Купить ЖК. (+12 кред/сек). Цена: 700 очков.</string>

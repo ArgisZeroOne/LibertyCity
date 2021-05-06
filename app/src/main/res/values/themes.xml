@@ -15,7 +15,7 @@
         <item name="colorOnSecondary">@color/black</item>
         <item name="colorOnBackground">@color/white</item>
         <item name="backgroundColor">@color/rally_yellow</item>
-        <item name="colorOnSurface">@color/rally_surface</item>
+        <item name="colorOnSurface">@color/black</item>
         <item name="colorSurface">@color/white</item>
         <item name="colorAccent">@color/rally_yellow</item>
         <item name="android:windowNoTitle">true</item>
@@ -24,10 +24,6 @@
         <!-- Status bar color. -->
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowAnimationStyle">@style/Alpha</item>
-        <item name="font">@font/eczar_medium</item>
-        <item name="fontFamily">@font/eczar_medium</item>
-        <item name="fontStyle">@font/eczar_medium</item>
-        <item name ="android:titleTextStyle">@font/eczar_medium</item>
         <item name="android:statusBarColor" tools:targetApi="l">@color/red</item>
         <!-- Customize your theme here. -->
 
