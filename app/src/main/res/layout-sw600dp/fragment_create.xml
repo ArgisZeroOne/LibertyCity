@@ -47,8 +47,9 @@
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
             android:layout_height="match_parent"
+            android:layout_gravity="center"
             tools:context=".ui.care.CareFragment">
 
             <Button

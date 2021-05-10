@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background">
+    android:background="?attr/backgroundColor">
 
     <TextView
         android:id="@+id/textView3"
@@ -37,7 +37,7 @@
         android:id="@+id/toolbarfrag2"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/yellow"
+        android:background="?attr/colorAccent"
         android:clickable="false"
         android:contextClickable="true"
         android:gravity="center_horizontal"

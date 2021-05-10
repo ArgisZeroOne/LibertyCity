@@ -7,9 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/backgroundColor"
-    android:forceDarkAllowed="true"
-    android:layerType="hardware"
-    app:statusBarBackground="#FFB300">
+    android:backgroundTintMode="add">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
@@ -17,23 +15,25 @@
         android:layout_width="match_parent"
         android:layout_height="192dp"
         android:background="#ffeb3b"
+        android:drawingCacheQuality="high"
+        android:textAlignment="center"
         android:visibility="gone"
         app:expanded="false">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
-            style="@style/Theme.MyApplication"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:backgroundTintMode="src_in"
-            android:forceDarkAllowed="true"
+
+            android:backgroundTint="#ffeb3b"
+            android:layerType="hardware"
             android:scaleX="1.03"
-            android:scrollbarTrackHorizontal="?android:attr/fastScrollTrackDrawable"
-            app:contentScrim="@color/yellow"
+            android:textAlignment="center"
+            app:contentScrim="#ffeb3b"
             app:expandedTitleMarginBottom="0dp"
             app:expandedTitleTextAppearance="@style/TextAppearance.AppCompat.Small"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:title="@string/title_create"
-            app:titleEnabled="true"
+            app:title="@string/title_care"
+            app:titleEnabled="false"
             app:toolbarId="@+id/toolbarfrag" />
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -43,92 +43,106 @@
 
 
         android:layout_marginTop="56dp"
-        android:visibility="visible"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal|center_vertical"
             tools:context=".ui.care.CareFragment">
 
             <Button
-                android:id="@+id/create_park"
-                android:layout_width="match_parent"
+                android:id="@+id/care_houses"
+                android:layout_width="350dp"
                 android:layout_height="120dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="10dp"
+                android:alpha="1"
                 android:backgroundTint="?attr/colorSurface"
                 android:elevation="20dp"
-                android:fontFeatureSettings="@string/app_name"
+
                 android:gravity="clip_horizontal|clip_vertical|start|fill"
                 android:onClick="Click"
-                android:text="@string/create_park"
+                android:scaleX="1"
+                android:text="@string/care_houses"
                 android:textSize="14sp"
                 android:typeface="normal"
                 app:cornerRadius="0dp"
-                app:icon="@drawable/twotone_nature_people_24"
+                app:icon="@drawable/twotone_handyman_24"
+                app:iconPadding="8dp"
                 app:iconTint="@color/rally_green_primary"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:id="@+id/create_roads"
-                android:layout_width="match_parent"
+                android:id="@+id/care_street"
+                android:layout_width="350dp"
                 android:layout_height="120dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
+                android:alpha="1"
                 android:backgroundTint="?attr/colorSurface"
+
                 android:gravity="clip_horizontal|clip_vertical|fill"
                 android:onClick="Click"
-                android:text="@string/create_roads"
+                android:text="@string/care_street"
                 android:textSize="14sp"
                 android:typeface="normal"
                 app:cornerRadius="0dp"
-                app:icon="@drawable/twotone_time_to_leave_24"
-                app:iconTint="@color/rally_surface"
+                app:icon="@drawable/twotone_cleaning_services_24"
+                app:iconTint="@color/rally_yellow"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/create_park" />
+                app:layout_constraintTop_toBottomOf="@id/care_houses"
+                app:rippleColor="@color/rally_yellow" />
 
             <Button
-                android:id="@+id/create_zdroads"
-                android:layout_width="match_parent"
+                android:id="@+id/care_water"
+                android:layout_width="350dp"
                 android:layout_height="120dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
+                android:alpha="1"
                 android:backgroundTint="?attr/colorSurface"
-                android:gravity="clip_horizontal|clip_vertical|fill"
-                android:onClick="Click"
-                android:text="@string/create_zdroads"
-                android:textSize="14sp"
-                android:typeface="normal"
-                app:cornerRadius="0dp"
-                app:icon="@drawable/twotone_train_24"
-                app:iconTint="@color/rally_orange"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/create_roads" />
 
-            <Button
-                android:id="@+id/create_vokzal"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:backgroundTint="?attr/colorSurface"
                 android:gravity="clip_horizontal|clip_vertical|fill"
                 android:onClick="Click"
-                android:text="@string/create_vokzal"
+                android:text="@string/care_water"
                 android:textSize="14sp"
                 android:typeface="normal"
                 app:cornerRadius="0dp"
-                app:icon="@drawable/twotone_subway_24"
+                app:icon="@drawable/twotone_water_drop_24"
                 app:iconTint="@color/rally_blue"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/create_zdroads" />
+                app:layout_constraintTop_toBottomOf="@id/care_street"
+                app:rippleColor="@color/rally_orange" />
+
+            <Button
+                android:id="@+id/care_roads"
+                android:layout_width="350dp"
+                android:layout_height="120dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:alpha="1"
+                android:backgroundTint="?attr/colorSurface"
+
+                android:gravity="clip_horizontal|clip_vertical|fill"
+                android:onClick="Click"
+                android:text="@string/care_roads"
+                android:textSize="14sp"
+                android:typeface="normal"
+                app:cornerRadius="0dp"
+                app:icon="@drawable/twotone_agriculture_24"
+                app:iconTint="@color/rally_orange"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/care_water" />
 
             <TextView
                 android:id="@+id/text_notifications"
@@ -143,7 +157,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>
@@ -156,28 +169,28 @@
         android:src="@android:drawable/ic_input_add"
         android:visibility="invisible" />
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarfrag"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorAccent"
+        android:backgroundTintMode="src_in"
+        android:textAlignment="center"
+        app:menu="@menu/toolbar_menu"
+        app:title="@string/title_care"
+        app:titleMarginStart="56dp"></androidx.appcompat.widget.Toolbar>
+
     <Button
         android:id="@+id/back_button_to_gov"
         android:layout_width="?attr/actionBarSize"
         android:layout_height="?attr/actionBarSize"
         android:layout_gravity="top|left"
         android:background="#00FFFFFF"
-        android:backgroundTintMode="multiply"
         android:foreground="@drawable/baseline_arrow_back_36"
         android:foregroundTintMode="src_in"
         android:onClick="Click"
         android:scaleX="0.5"
         android:scaleY="0.5" />
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarfrag"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorAccent"
-        android:clickable="true"
-        app:menu="@menu/toolbar_menu"
-        app:title="@string/title_create"
-        app:titleMarginStart="56dp"></androidx.appcompat.widget.Toolbar>
 
     <LinearLayout
         android:id="@+id/linearLayoutProgress"
@@ -269,7 +282,6 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
-
     "
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

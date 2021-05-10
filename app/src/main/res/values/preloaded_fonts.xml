@@ -2,5 +2,9 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
 
+        <item>@font/baloo_tamma</item>
+        <item>@font/coiny</item>
+        <item>@font/francois_one</item>
+        <item>@font/source_code_pro</item>
     </array>
 </resources>

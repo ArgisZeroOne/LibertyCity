@@ -36,11 +36,12 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_gravity="center"
             tools:context=".ui.care.CareFragment">
 
             <Button
                 android:id="@+id/store_interval"
-                android:layout_width="match_parent"
+                android:layout_width="350dp"
                 android:layout_height="120dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="8dp"
@@ -63,7 +64,7 @@
 
             <Button
                 android:id="@+id/store_lunapark"
-                android:layout_width="match_parent"
+                android:layout_width="350dp"
                 android:layout_height="120dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
@@ -85,7 +86,7 @@
 
             <Button
                 android:id="@+id/store_houses"
-                android:layout_width="match_parent"
+                android:layout_width="350dp"
                 android:layout_height="120dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
@@ -107,7 +108,7 @@
 
             <Button
                 android:id="@+id/store_vokzal"
-                android:layout_width="match_parent"
+                android:layout_width="350dp"
                 android:layout_height="120dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
@@ -128,7 +129,7 @@
 
             <Button
                 android:id="@+id/store_zdroads"
-                android:layout_width="match_parent"
+                android:layout_width="350dp"
                 android:layout_height="120dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
@@ -149,7 +150,7 @@
 
             <Button
                 android:id="@+id/store_zk"
-                android:layout_width="match_parent"
+                android:layout_width="350dp"
                 android:layout_height="120dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"

@@ -7,9 +7,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/backgroundColor"
-    android:forceDarkAllowed="true"
-    android:layerType="hardware"
-    app:statusBarBackground="#FFB300">
+    android:orientation="horizontal"
+    android:outlineProvider="background">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
@@ -21,19 +20,19 @@
         app:expanded="false">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
-            style="@style/Theme.MyApplication"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:backgroundTintMode="src_in"
-            android:forceDarkAllowed="true"
-            android:scaleX="1.03"
-            android:scrollbarTrackHorizontal="?android:attr/fastScrollTrackDrawable"
-            app:contentScrim="@color/yellow"
+
+            android:fadingEdge="vertical"
+            android:foreground="@color/Blue_800"
+            android:foregroundGravity="fill_horizontal"
+            android:foregroundTint="#DFFF0000"
+            app:contentScrim="#ffeb3b"
             app:expandedTitleMarginBottom="0dp"
-            app:expandedTitleTextAppearance="@style/TextAppearance.AppCompat.Small"
+            app:expandedTitleMarginStart="0dp"
+            app:expandedTitleTextAppearance="@style/text"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:title="@string/title_create"
-            app:titleEnabled="true"
+            app:title="@string/title_contract"
             app:toolbarId="@+id/toolbarfrag" />
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -43,92 +42,99 @@
 
 
         android:layout_marginTop="56dp"
-        android:visibility="visible"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal|center_vertical"
             tools:context=".ui.care.CareFragment">
 
             <Button
-                android:id="@+id/create_park"
-                android:layout_width="match_parent"
+                android:id="@+id/contract_shopcenter"
+                android:layout_width="350dp"
                 android:layout_height="120dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="10dp"
+                android:alpha="1"
                 android:backgroundTint="?attr/colorSurface"
                 android:elevation="20dp"
-                android:fontFeatureSettings="@string/app_name"
+
                 android:gravity="clip_horizontal|clip_vertical|start|fill"
                 android:onClick="Click"
-                android:text="@string/create_park"
+                android:text="@string/contract_shopcenter"
                 android:textSize="14sp"
-                android:typeface="normal"
                 app:cornerRadius="0dp"
-                app:icon="@drawable/twotone_nature_people_24"
-                app:iconTint="@color/rally_green_primary"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
-                android:id="@+id/create_roads"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:backgroundTint="?attr/colorSurface"
-                android:gravity="clip_horizontal|clip_vertical|fill"
-                android:onClick="Click"
-                android:text="@string/create_roads"
-                android:textSize="14sp"
-                android:typeface="normal"
-                app:cornerRadius="0dp"
-                app:icon="@drawable/twotone_time_to_leave_24"
-                app:iconTint="@color/rally_surface"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/create_park" />
-
-            <Button
-                android:id="@+id/create_zdroads"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:backgroundTint="?attr/colorSurface"
-                android:gravity="clip_horizontal|clip_vertical|fill"
-                android:onClick="Click"
-                android:text="@string/create_zdroads"
-                android:textSize="14sp"
-                android:typeface="normal"
-                app:cornerRadius="0dp"
-                app:icon="@drawable/twotone_train_24"
+                app:icon="@drawable/twotone_store_24"
                 app:iconTint="@color/rally_orange"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/create_roads" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:rippleColor="@color/rally_orange" />
 
             <Button
-                android:id="@+id/create_vokzal"
-                android:layout_width="match_parent"
+                android:id="@+id/contract_zk"
+                android:layout_width="350dp"
                 android:layout_height="120dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
+                android:alpha="1"
                 android:backgroundTint="?attr/colorSurface"
                 android:gravity="clip_horizontal|clip_vertical|fill"
                 android:onClick="Click"
-                android:text="@string/create_vokzal"
+                android:text="@string/contract_zk"
                 android:textSize="14sp"
-                android:typeface="normal"
                 app:cornerRadius="0dp"
-                app:icon="@drawable/twotone_subway_24"
-                app:iconTint="@color/rally_blue"
+                app:icon="@drawable/twotone_domain_24"
+                app:iconTint="@color/rally_darkgreen"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/create_zdroads" />
+                app:layout_constraintTop_toBottomOf="@id/contract_shopcenter"
+                app:rippleColor="@color/rally_darkgreen" />
+
+            <Button
+                android:id="@+id/contract_lunapark"
+                android:layout_width="350dp"
+                android:layout_height="120dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:alpha="1"
+                android:backgroundTint="?attr/colorSurface"
+                android:gravity="clip_horizontal|clip_vertical|fill"
+                android:onClick="Click"
+                android:text="@string/contract_lunapark"
+                android:textSize="14sp"
+                app:cornerRadius="0dp"
+                app:icon="@drawable/twotone_attractions_24"
+                app:iconTint="@color/rally_yellow"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/contract_zk"
+                app:rippleColor="@color/rally_yellow" />
+
+            <Button
+                android:id="@+id/contract_houses"
+                android:layout_width="350dp"
+                android:layout_height="120dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:alpha="1"
+                android:backgroundTint="?attr/colorSurface"
+                android:gravity="clip_horizontal|clip_vertical|fill"
+                android:onClick="Click"
+                android:text="@string/contract_houses"
+                android:textSize="14sp"
+                app:cornerRadius="0dp"
+                app:icon="@drawable/twotone_real_estate_agent_24"
+                app:iconTint="@color/rally_green_primary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/contract_lunapark"
+                app:rippleColor="@color/rally_green_primary" />
 
             <TextView
                 android:id="@+id/text_notifications"
@@ -143,7 +149,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>
@@ -154,7 +159,7 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
         android:src="@android:drawable/ic_input_add"
-        android:visibility="invisible" />
+        android:visibility="gone" />
 
     <Button
         android:id="@+id/back_button_to_gov"
@@ -162,7 +167,6 @@
         android:layout_height="?attr/actionBarSize"
         android:layout_gravity="top|left"
         android:background="#00FFFFFF"
-        android:backgroundTintMode="multiply"
         android:foreground="@drawable/baseline_arrow_back_36"
         android:foregroundTintMode="src_in"
         android:onClick="Click"
@@ -174,16 +178,15 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorAccent"
-        android:clickable="true"
         app:menu="@menu/toolbar_menu"
-        app:title="@string/title_create"
+        app:title="@string/title_contract"
         app:titleMarginStart="56dp"></androidx.appcompat.widget.Toolbar>
 
     <LinearLayout
         android:id="@+id/linearLayoutProgress"
         android:layout_width="168dp"
         android:layout_height="?attr/actionBarSize"
-        android:layout_gravity="right|top|center_vertical|end"
+        android:layout_gravity="right|top|end"
         android:layout_marginRight="40dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"

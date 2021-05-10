@@ -32,11 +32,11 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/toolbar"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:alpha="1"
         android:animateLayoutChanges="true"
-        android:background="#ffff72"
+        android:background="?attr/colorAccent"
         android:forceDarkAllowed="true"
         app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"

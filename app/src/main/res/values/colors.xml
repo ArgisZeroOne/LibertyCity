@@ -28,6 +28,8 @@
     <color name="rally_purple">#B15DFF</color>
     <color name="rally_blue">#72DEFF</color>
     <color name="red">#F16763</color>
+    <color name="reply_blue_700">#344955</color>
+    <color name="reply_orange">#F9AA33</color>
     <color name="dark_blue">#0081cb</color>
 
 </resources>

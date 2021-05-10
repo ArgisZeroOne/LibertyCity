@@ -6,35 +6,32 @@
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/backgroundColor"
-    android:forceDarkAllowed="true"
-    android:layerType="hardware"
-    app:statusBarBackground="#FFB300">
+    android:background="?attr/backgroundColor">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
 
         android:layout_width="match_parent"
         android:layout_height="192dp"
+        android:alpha="1"
         android:background="#ffeb3b"
         android:visibility="gone"
         app:expanded="false">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
-            style="@style/Theme.MyApplication"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:backgroundTintMode="src_in"
-            android:forceDarkAllowed="true"
+            android:alpha="1"
+
             android:scaleX="1.03"
-            android:scrollbarTrackHorizontal="?android:attr/fastScrollTrackDrawable"
-            app:contentScrim="@color/yellow"
+            app:contentScrim="#ffeb3b"
             app:expandedTitleMarginBottom="0dp"
             app:expandedTitleTextAppearance="@style/TextAppearance.AppCompat.Small"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:title="@string/title_create"
-            app:titleEnabled="true"
-            app:toolbarId="@+id/toolbarfrag" />
+            app:toolbarId="@+id/toolbarfrag">
+
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
@@ -43,92 +40,103 @@
 
 
         android:layout_marginTop="56dp"
-        android:visibility="visible"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_gravity="center"
             tools:context=".ui.care.CareFragment">
 
             <Button
-                android:id="@+id/create_park"
-                android:layout_width="match_parent"
+                android:id="@+id/finance_nalog"
+                android:layout_width="350dp"
                 android:layout_height="120dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="10dp"
+                android:alpha="1"
                 android:backgroundTint="?attr/colorSurface"
                 android:elevation="20dp"
-                android:fontFeatureSettings="@string/app_name"
                 android:gravity="clip_horizontal|clip_vertical|start|fill"
                 android:onClick="Click"
-                android:text="@string/create_park"
+                android:scaleX="1"
+                android:text="@string/finance_nalog"
                 android:textSize="14sp"
                 android:typeface="normal"
                 app:cornerRadius="0dp"
-                app:icon="@drawable/twotone_nature_people_24"
-                app:iconTint="@color/rally_green_primary"
+                app:icon="@drawable/twotone_paid_24"
+                app:iconTint="@color/rally_yellow"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:id="@+id/create_roads"
-                android:layout_width="match_parent"
+                android:id="@+id/finance_optimazation"
+                android:layout_width="350dp"
                 android:layout_height="120dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
+                android:alpha="1"
                 android:backgroundTint="?attr/colorSurface"
                 android:gravity="clip_horizontal|clip_vertical|fill"
                 android:onClick="Click"
-                android:text="@string/create_roads"
+                android:scaleX="1"
+                android:text="@string/finance_optimazation"
                 android:textSize="14sp"
                 android:typeface="normal"
                 app:cornerRadius="0dp"
-                app:icon="@drawable/twotone_time_to_leave_24"
+                app:icon="@drawable/twotone_card_giftcard_24"
+                app:iconTint="@color/rally_green_primary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/finance_nalog" />
+
+            <Button
+                android:id="@+id/finance_pin"
+                android:layout_width="350dp"
+                android:layout_height="120dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:alpha="1"
+                android:backgroundTint="?attr/colorSurface"
+                android:gravity="clip_horizontal|clip_vertical|fill"
+                android:onClick="Click"
+                android:scaleX="1"
+                android:text="@string/finance_pin"
+                android:textSize="14sp"
+                android:typeface="normal"
+                app:cornerRadius="0dp"
+                app:icon="@drawable/twotone_sentiment_very_dissatisfied_24"
                 app:iconTint="@color/rally_surface"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/create_park" />
+                app:layout_constraintTop_toBottomOf="@id/finance_optimazation" />
 
             <Button
-                android:id="@+id/create_zdroads"
-                android:layout_width="match_parent"
+                android:id="@+id/finance_pile"
+                android:layout_width="350dp"
                 android:layout_height="120dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
+                android:alpha="1"
                 android:backgroundTint="?attr/colorSurface"
                 android:gravity="clip_horizontal|clip_vertical|fill"
                 android:onClick="Click"
-                android:text="@string/create_zdroads"
+                android:scaleX="1"
+                android:text="@string/finance_pile"
                 android:textSize="14sp"
                 android:typeface="normal"
                 app:cornerRadius="0dp"
-                app:icon="@drawable/twotone_train_24"
+                app:icon="@drawable/twotone_carpenter_24"
                 app:iconTint="@color/rally_orange"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/create_roads" />
-
-            <Button
-                android:id="@+id/create_vokzal"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:backgroundTint="?attr/colorSurface"
-                android:gravity="clip_horizontal|clip_vertical|fill"
-                android:onClick="Click"
-                android:text="@string/create_vokzal"
-                android:textSize="14sp"
-                android:typeface="normal"
-                app:cornerRadius="0dp"
-                app:icon="@drawable/twotone_subway_24"
-                app:iconTint="@color/rally_blue"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/create_zdroads" />
+                app:layout_constraintTop_toBottomOf="@id/finance_pin" />
 
             <TextView
                 android:id="@+id/text_notifications"
@@ -156,28 +164,26 @@
         android:src="@android:drawable/ic_input_add"
         android:visibility="invisible" />
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarfrag"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorAccent"
+        app:menu="@menu/toolbar_menu"
+        app:subtitleTextColor="@color/white"
+        app:title="@string/title_finance"
+        app:titleMarginStart="56dp"></androidx.appcompat.widget.Toolbar>
+
     <Button
         android:id="@+id/back_button_to_gov"
         android:layout_width="?attr/actionBarSize"
         android:layout_height="?attr/actionBarSize"
         android:layout_gravity="top|left"
         android:background="#00FFFFFF"
-        android:backgroundTintMode="multiply"
         android:foreground="@drawable/baseline_arrow_back_36"
-        android:foregroundTintMode="src_in"
         android:onClick="Click"
         android:scaleX="0.5"
         android:scaleY="0.5" />
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarfrag"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorAccent"
-        android:clickable="true"
-        app:menu="@menu/toolbar_menu"
-        app:title="@string/title_create"
-        app:titleMarginStart="56dp"></androidx.appcompat.widget.Toolbar>
 
     <LinearLayout
         android:id="@+id/linearLayoutProgress"
@@ -266,6 +272,7 @@
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
