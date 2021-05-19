@@ -88,7 +88,7 @@
                     android:insetTop="0dp"
                     android:insetBottom="0dp"
                     android:onClick="Click"
-                    android:text="Улучшить"
+                    android:text="@string/update"
                     android:typeface="normal"
                     app:cornerRadius="0dp"
                     app:iconPadding="0dp"
@@ -181,7 +181,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:text="Прибыль:"
+                        android:text="@string/profit"
                         android:textSize="24sp"
                         android:typeface="normal"
                         app:layout_constraintStart_toStartOf="parent"
@@ -242,7 +242,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
 
-                        android:text="Затраты:"
+                        android:text="@string/costs"
                         android:textSize="24sp"
                         android:typeface="normal"
                         app:layout_constraintStart_toStartOf="parent"
@@ -302,7 +302,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
 
-                        android:text="Казна:"
+                        android:text="@string/total"
                         android:textSize="24sp"
                         android:typeface="normal"
                         app:layout_constraintStart_toStartOf="parent"
@@ -330,7 +330,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
 
-                        android:text="Cостояние"
+                        android:text="@string/conditon"
                         android:textSize="12sp"
                         android:typeface="normal"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -371,7 +371,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
 
-                        android:text="Подозрение"
+                        android:text="@string/suspicion"
                         android:textSize="12sp"
                         android:typeface="normal"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -412,7 +412,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
 
-                        android:text="Счастье"
+                        android:text="@string/happy"
                         android:textSize="12sp"
                         android:typeface="normal"
                         app:layout_constraintBottom_toBottomOf="parent"

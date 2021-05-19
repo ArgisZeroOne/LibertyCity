@@ -18,7 +18,7 @@ import com.example.myapplication.MainActivity;
 import com.example.myapplication.R;
 
 public class GovFragment extends Fragment {
-    public static void Timer(View root) {
+    public void Timer(View root) {
 
         new CountDownTimer(60000, 1000) {
 
@@ -45,23 +45,23 @@ public class GovFragment extends Fragment {
                 String constpay_str = Integer.toString(val.constantpays);
                 String citylevel_str = Integer.toString(val.citylevel);
                 String scores_str = Integer.toString(val.scores);
-                trsrycsts.setText("Поступления: " + trsrycsts_str);
-                scores.setText("Очки: " + scores_str);
-                 money.setText("Итого в казне: " + money_str);
-                salary.setText("Выручка: + " + salary_str);
-                taxespay.setText("Налоги: + " + taxespay_str);
-                citylevel.setText("Уровень города: " + citylevel_str);
-                centerpay.setText("Отчисления в центр: - " + centerpay_str);
-                constpay.setText("Постоянные: - " + constpay_str);
-               cityprogress.setProgress(val.cityprogress);
-                cityhappy.setProgress((int)val.cityhappy);
-                citycondition.setProgress((int)val.citycondition);
+                trsrycsts.setText(getString(R.string.Receipts) + " " + trsrycsts_str + getString(R.string.credits));
+                scores.setText(getString(R.string.scores) + " " + scores_str);
+                money.setText(getString(R.string.tresuary) + " " + money_str + getString(R.string.credits));
+                salary.setText(getString(R.string.revenue) + " " + salary_str + getString(R.string.credits));
+                taxespay.setText(getString(R.string.taxes) + " " + taxespay_str + getString(R.string.credits));
+                citylevel.setText(getString(R.string.citylevel) + " " + citylevel_str);
+                centerpay.setText(getString(R.string.centerpay) + " " + centerpay_str + getString(R.string.credits));
+                constpay.setText(getString(R.string.constantpays) + " " + constpay_str + getString(R.string.credits));
+                cityprogress.setProgress(val.cityprogress);
+                cityhappy.setProgress((int) val.cityhappy);
+                citycondition.setProgress((int) val.citycondition);
                 suspension.setProgress(val.suspension);
                 ProgressBar suspension_tool = (ProgressBar) root.findViewById(R.id.susp_prgsbar_tool);
                 ProgressBar cityhappy_tool = (ProgressBar) root.findViewById(R.id.hppy_prgsbar_tool);
                 ProgressBar citycondition_tool = (ProgressBar) root.findViewById(R.id.citycond_prgsbar_tool);
-                cityhappy_tool.setProgress((int)val.cityhappy);
-                citycondition_tool.setProgress((int)val.citycondition);
+                cityhappy_tool.setProgress((int) val.cityhappy);
+                citycondition_tool.setProgress((int) val.citycondition);
                 suspension_tool.setProgress(val.suspension);
                 Toolbar toolbar = (Toolbar) root.findViewById(R.id.toolbarfrag);
 
@@ -74,17 +74,18 @@ public class GovFragment extends Fragment {
         }.start();
 
     }
+
     private Toolbar toolbar;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_gov, container, false);
 
         toolbar = root.findViewById(R.id.toolbarfrag);
 
-      Timer(root);
+        Timer(root);
         return root;
     }
-
 
 
 }

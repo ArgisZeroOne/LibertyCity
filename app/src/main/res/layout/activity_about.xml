@@ -13,7 +13,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:text="Интересный градостроительный кликер, созданный на коленке(Android Studio) в качестве итогового проекта для IT Samsung School. Автор очень надеется получить не менее 8 баллов(Ну пожалуйста,очень хочется себе аттестат особого образца;) ). P.S. Хочу кушац, не против если меня накормят чем-нибудь. P.P.S. Этот раздел был создан чисто для симметрии главного меню, так что за содержание не обессудьте."
+        android:text="@string/abouttext1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,7 +55,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:gravity="right"
-        android:text='Made by Nikita "Fukurou" Bekkel. (Да-да, я захотел выпендриться)'
+        android:text="@string/abouttext2"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

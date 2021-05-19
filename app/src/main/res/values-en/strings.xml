@@ -1,18 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">Liberty City</string>
+    <string name="Tick">Tick</string>
+    <string name="title_about">About game</string>
+    <string name="title_record">Records</string>
+    <string name="title_finance">Finance</string>
+    <string name="title_contract">Contract</string>
+    <string name="title_create">Create</string>
+    <string name="title_care">Care</string>
     <string name="title_gov">City Hall</string>
     <string name="toolbar_save">Save</string>
     <string name="toolbar_load">Load</string>
     <string name="toolbar_exit">Exit</string>
-    <string name="app_name">Liberty City</string>
-    <string name="Tick">Tick</string>
-    <string name="title_about">About game</string>
     <string name="store_interval">Buy 100ms interval. Price: 1000 points.</string>
     <string name="store_houses">Buy a district. (+18 credits/sec) Price: 1000 points.</string>
     <string name="store_zk">Buy a residential complex. (+12 credits/sec). Price: 700 points.</string>
     <string name="store_lunapark">Buy lunapark. (+15 credits/sec). Price: 850 points.</string>
     <string name="store_vokzal">Buy a train station. (+5 credits/sec). Price: 450 points.</string>
     <string name="store_zdroads">Buy railway tracks. (+2 credits / sec). Price: 300 points.</string>
-    <string name="title_record">Records</string>
     <string name="low_happy">Happy level very low</string>
     <string name="low_cond">Condition level very low</string>
     <string name="high_susp">Suspens level very high</string>
@@ -23,17 +28,13 @@
     <string name="contract_zk">Build a residential complex (+17 happiness, +10 city status, -18000 credits, +12 credits / sec.)</string>
     <string name="contract_lunapark">Build a lunapark(+20 happiness, +5 city state, -20000 credits, +15 credits / sec.)</string>
     <string name="finance_nalog">Collect taxes(-5 happiness, +500 credits)</string>
+    <string name="finance_pin">Connect illegal sources(-20 happiness, + 5000 credits, +40 suspicion)</string>
     <string name="finance_optimazation">Take a bribe(-10 happiness, + 1500 credits, + 15 suspicion)</string>
     <string name="finance_pile">Cut the budget(-35 happiness, + 10000 credits, + 70 suspicion)</string>
-    <string name="finance_pin">Connect illegal sources(-20 happiness, + 5000 credits, +40 suspicion)</string>
     <string name="create_roads">Road construction (+7 happiness, + 10 city condition, -1200 credits)</string>
     <string name="create_park">Break the park(+15 happiness, +3 city state, -700 credits)</string>
     <string name="create_vokzal">Build a train station(+10 happiness, +20 city status, -5000 credits, +5 credits / sec.)</string>
     <string name="create_zdroads">Laying railway tracks(+5 happiness, +2 state of the city, -2500 credits, +2 credits/sec.)</string>
-    <string name="title_finance">Finance</string>
-    <string name="title_contract">Contract</string>
-    <string name="title_create">Create</string>
-    <string name="title_care">Care</string>
     <string name="care_roads">Road maintenance (+5 happiness, +5 city condition, -500 credits)</string>
     <string name="care_street">Street cleaning (+5 happiness, +2 city condition, -150 credits)</string>
     <string name="care_houses">House repairs (+15 happiness, +10 city condition, -1500 credits)</string>

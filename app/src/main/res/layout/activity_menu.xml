@@ -55,7 +55,7 @@
                 android:insetRight="8dp"
                 android:insetBottom="0dp"
                 android:onClick="onClick"
-                android:text="Старт"
+                android:text="@string/start"
                 app:cornerRadius="0dp" />
 
             <Button
@@ -70,7 +70,7 @@
                 android:insetRight="8dp"
                 android:insetBottom="0dp"
                 android:onClick="onClick"
-                android:text="Настройки"
+                android:text="@string/settings"
                 app:cornerRadius="0dp" />
 
         </TableRow>
@@ -91,7 +91,7 @@
                 android:insetRight="8dp"
                 android:insetBottom="0dp"
                 android:onClick="onClick"
-                android:text="Магазин"
+                android:text="@string/store"
                 app:cornerRadius="0dp" />
 
             <Button
@@ -105,7 +105,7 @@
                 android:insetRight="8dp"
                 android:insetBottom="0dp"
                 android:onClick="onClick"
-                android:text="Рекорды"
+                android:text="@string/records"
                 app:cornerRadius="0dp" />
         </TableRow>
 
@@ -125,7 +125,7 @@
                 android:insetRight="8dp"
                 android:insetBottom="0dp"
                 android:onClick="onClick"
-                android:text="Выход"
+                android:text="@string/toolbar_exit"
                 app:cornerRadius="0dp" />
 
             <Button
@@ -139,7 +139,7 @@
                 android:insetRight="8dp"
                 android:insetBottom="0dp"
                 android:onClick="onClick"
-                android:text="О игре"
+                android:text="@string/title_about"
                 app:cornerRadius="0dp" />
         </TableRow>
 
