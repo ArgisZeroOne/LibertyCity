@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -55,11 +56,15 @@ public class MenuActivity extends AppCompatActivity {
     private static final String MY_SETTINGS = "my_settings";
 
     protected void onCreate(Bundle savedInstanceState) {
+        SharedPreferences sp = getSharedPreferences(MY_SETTINGS,
+                Context.MODE_PRIVATE);
+        boolean hasDark = sp.getBoolean("hasDark", true);
+        if (hasDark) setTheme(R.style.ThemeMyApplicationDark);
+        if (!hasDark) setTheme(R.style.ThemeMyApplication);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
         getSupportActionBar().hide();
-        SharedPreferences sp = getSharedPreferences(MY_SETTINGS,
-                Context.MODE_PRIVATE);
+
 
         boolean hasVisited = sp.getBoolean("hasVisited", false);
         if (!hasVisited) {
@@ -81,8 +86,12 @@ public class MenuActivity extends AppCompatActivity {
         }
     }
 
-    public void onClick(View view) {
+    public void MenuClick(View view) {
         switch (view.getId()) {
+            case R.id.settings:
+                Intent intent_settings = new Intent(MenuActivity.this, SettingsActivity.class);
+                startActivity(intent_settings);
+                break;
             case R.id.about:
                 Intent intent_about = new Intent(MenuActivity.this, AboutActivity.class);
                 startActivity(intent_about);
@@ -92,8 +101,8 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(intent_start);
                 break;
             case R.id.records:
-                Intent intent_settings = new Intent(MenuActivity.this, RecordsActivity.class);
-                startActivity(intent_settings);
+                Intent intent_records = new Intent(MenuActivity.this, RecordsActivity.class);
+                startActivity(intent_records);
                 break;
             case R.id.store:
                 Intent intent_store = new Intent(MenuActivity.this, StoreActivity.class);
@@ -102,6 +111,7 @@ public class MenuActivity extends AppCompatActivity {
             case R.id.exit:
                 moveTaskToBack(true);
                 break;
+
 
         }
     }

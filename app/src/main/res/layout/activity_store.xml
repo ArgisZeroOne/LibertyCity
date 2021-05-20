@@ -13,6 +13,7 @@
         android:layout_gravity="top|left"
         android:background="#00FFFFFF"
         android:foreground="@drawable/baseline_arrow_back_36"
+        android:foregroundTint="?attr/colorOnSurface"
         android:foregroundTintMode="src_in"
         android:onClick="Click"
         android:scaleX="0.5"
@@ -198,7 +199,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:title="Магазин"
-        app:titleMarginStart="56dp"></androidx.appcompat.widget.Toolbar>
+        app:titleMarginStart="56dp"
+        app:titleTextColor="?attr/colorOnSurface"></androidx.appcompat.widget.Toolbar>
 
     <TextView
         android:id="@+id/store_score"

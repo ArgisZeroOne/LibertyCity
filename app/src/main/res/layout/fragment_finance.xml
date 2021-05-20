@@ -171,7 +171,8 @@
         app:menu="@menu/toolbar_menu"
         app:subtitleTextColor="@color/white"
         app:title="@string/title_finance"
-        app:titleMarginStart="56dp"></androidx.appcompat.widget.Toolbar>
+        app:titleMarginStart="56dp"
+        app:titleTextColor="?attr/colorOnSurface"></androidx.appcompat.widget.Toolbar>
 
     <Button
         android:id="@+id/back_button_to_gov"
@@ -180,6 +181,7 @@
         android:layout_gravity="top|left"
         android:background="#00FFFFFF"
         android:foreground="@drawable/baseline_arrow_back_36"
+        android:foregroundTint="?attr/colorOnSurface"
         android:onClick="Click"
         android:scaleX="0.5"
         android:scaleY="0.5" />

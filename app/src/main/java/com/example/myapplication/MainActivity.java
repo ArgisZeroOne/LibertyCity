@@ -3,6 +3,7 @@ package com.example.myapplication;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.text.Layout;
@@ -32,6 +33,7 @@ import java.util.Timer;
 public class MainActivity extends AppCompatActivity {
     SharedPreferences mySettings;
 
+
     private void saveArrayList(String name, ArrayList<String> list) {
         SharedPreferences prefs = getSharedPreferences("Records", MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
@@ -48,6 +50,11 @@ public class MainActivity extends AppCompatActivity {
         list.addAll(Arrays.asList(strings));
         return list;
     }
+    public static String getStringByIdName(Context context, String idName) {
+        Resources res = context.getResources();
+        return res.getString(res.getIdentifier(idName, "string", context.getPackageName()));
+    }
+
 
     public class Settings {
         public static final String APP_PREFERENCES = "mysettings";
@@ -265,6 +272,11 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        SharedPreferences sp = getSharedPreferences("my_settings",
+                Context.MODE_PRIVATE);
+        boolean hasDark = sp.getBoolean("hasDark", true);
+        if (hasDark) setTheme(R.style.ThemeMyApplicationDark);
+        if (!hasDark) setTheme(R.style.ThemeMyApplication);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();

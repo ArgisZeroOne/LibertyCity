@@ -17,6 +17,11 @@ import java.util.Arrays;
 public class DeadActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        SharedPreferences sp = getSharedPreferences("my_settings",
+                Context.MODE_PRIVATE);
+        boolean hasDark = sp.getBoolean("hasDark", true);
+        if (hasDark) setTheme(R.style.ThemeMyApplicationDark);
+        if (!hasDark) setTheme(R.style.ThemeMyApplication);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dead);
         getSupportActionBar().hide();

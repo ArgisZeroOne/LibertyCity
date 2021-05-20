@@ -21,7 +21,7 @@
         app:expanded="false">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
-            style="@style/Theme.MyApplication"
+            style="@style/ThemeMyApplication"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:backgroundTintMode="src_in"

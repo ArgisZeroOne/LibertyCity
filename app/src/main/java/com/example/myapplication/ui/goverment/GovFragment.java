@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import androidx.annotation.NonNull;
@@ -18,6 +17,9 @@ import com.example.myapplication.MainActivity;
 import com.example.myapplication.R;
 
 public class GovFragment extends Fragment {
+
+
+
     public void Timer(View root) {
 
         new CountDownTimer(60000, 1000) {
@@ -45,14 +47,14 @@ public class GovFragment extends Fragment {
                 String constpay_str = Integer.toString(val.constantpays);
                 String citylevel_str = Integer.toString(val.citylevel);
                 String scores_str = Integer.toString(val.scores);
-                trsrycsts.setText(getString(R.string.Receipts) + " " + trsrycsts_str + getString(R.string.credits));
-                scores.setText(getString(R.string.scores) + " " + scores_str);
-                money.setText(getString(R.string.tresuary) + " " + money_str + getString(R.string.credits));
-                salary.setText(getString(R.string.revenue) + " " + salary_str + getString(R.string.credits));
-                taxespay.setText(getString(R.string.taxes) + " " + taxespay_str + getString(R.string.credits));
-                citylevel.setText(getString(R.string.citylevel) + " " + citylevel_str);
-                centerpay.setText(getString(R.string.centerpay) + " " + centerpay_str + getString(R.string.credits));
-                constpay.setText(getString(R.string.constantpays) + " " + constpay_str + getString(R.string.credits));
+                trsrycsts.setText( " " + trsrycsts_str + " " );
+                scores.setText(" " + scores_str+ " " );
+                money.setText(" " + money_str + " " );
+                salary.setText(" " + salary_str + " " );
+                taxespay.setText(" " + taxespay_str + " " );
+                citylevel.setText(" " + citylevel_str+ " " );
+                centerpay.setText(" " + centerpay_str + " " );
+                constpay.setText( " " + constpay_str + " " );
                 cityprogress.setProgress(val.cityprogress);
                 cityhappy.setProgress((int) val.cityhappy);
                 citycondition.setProgress((int) val.citycondition);

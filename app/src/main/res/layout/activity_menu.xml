@@ -54,7 +54,7 @@
                 android:insetTop="0dp"
                 android:insetRight="8dp"
                 android:insetBottom="0dp"
-                android:onClick="onClick"
+                android:onClick="MenuClick"
                 android:text="@string/start"
                 app:cornerRadius="0dp" />
 
@@ -69,7 +69,7 @@
                 android:insetTop="0dp"
                 android:insetRight="8dp"
                 android:insetBottom="0dp"
-                android:onClick="onClick"
+                android:onClick="MenuClick"
                 android:text="@string/settings"
                 app:cornerRadius="0dp" />
 
@@ -90,7 +90,7 @@
                 android:insetTop="0dp"
                 android:insetRight="8dp"
                 android:insetBottom="0dp"
-                android:onClick="onClick"
+                android:onClick="MenuClick"
                 android:text="@string/store"
                 app:cornerRadius="0dp" />
 
@@ -104,7 +104,7 @@
                 android:insetTop="0dp"
                 android:insetRight="8dp"
                 android:insetBottom="0dp"
-                android:onClick="onClick"
+                android:onClick="MenuClick"
                 android:text="@string/records"
                 app:cornerRadius="0dp" />
         </TableRow>
@@ -124,7 +124,7 @@
                 android:insetTop="0dp"
                 android:insetRight="8dp"
                 android:insetBottom="0dp"
-                android:onClick="onClick"
+                android:onClick="MenuClick"
                 android:text="@string/toolbar_exit"
                 app:cornerRadius="0dp" />
 
@@ -138,7 +138,7 @@
                 android:insetTop="0dp"
                 android:insetRight="8dp"
                 android:insetBottom="0dp"
-                android:onClick="onClick"
+                android:onClick="MenuClick"
                 android:text="@string/title_about"
                 app:cornerRadius="0dp" />
         </TableRow>

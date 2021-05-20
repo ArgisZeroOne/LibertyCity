@@ -17,7 +17,6 @@
         android:insetTop="0dp"
         android:insetRight="8dp"
         android:insetBottom="0dp"
-        android:onClick="onClick"
         android:text="@string/lang"
         app:cornerRadius="0dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,7 +35,7 @@
         android:insetTop="0dp"
         android:insetRight="8dp"
         android:insetBottom="0dp"
-        android:onClick="onClick"
+        android:onClick="Click"
         android:text="@string/theme"
         app:cornerRadius="0dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -56,7 +55,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:title="@string/settings"
-        app:titleMarginStart="56dp"></androidx.appcompat.widget.Toolbar>
+        app:titleMarginStart="56dp"
+        app:titleTextColor="?attr/colorOnSurface"></androidx.appcompat.widget.Toolbar>
 
     <Button
         android:id="@+id/back_button_settings"
@@ -65,8 +65,9 @@
         android:layout_gravity="top|left"
         android:background="#00FFFFFF"
         android:foreground="@drawable/baseline_arrow_back_36"
+        android:foregroundTint="?attr/colorOnSurface"
         android:foregroundTintMode="src_in"
-        android:onClick="onClick"
+        android:onClick="Click"
         android:scaleX="0.5"
         android:scaleY="0.5"
         app:layout_constraintStart_toStartOf="parent"

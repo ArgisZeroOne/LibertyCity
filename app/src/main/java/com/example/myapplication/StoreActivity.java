@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -55,10 +56,11 @@ public class StoreActivity extends AppCompatActivity {
         editor.putString(settings.APP_PREFERENCES_store_lunapark, String.valueOf(Values.store_lunapark));
         editor.putString(settings.APP_PREFERENCES_store_interval, String.valueOf(Values.store_interval));
         editor.apply();
+        UpdateText();
     }
 
     public void LoadValues() {
-        Values.globalscore = Integer.parseInt(mySettings.getString(settings.APP_PREFERENCES_globalscore, "0"));
+        Values.globalscore = Integer.parseInt(mySettings.getString(settings.APP_PREFERENCES_globalscore, "1000"));
         Values.store_houses = Integer.parseInt(mySettings.getString(settings.APP_PREFERENCES_store_houses, "0"));
         Values.store_zdroads = Integer.parseInt(mySettings.getString(settings.APP_PREFERENCES_store_zdroads, "0"));
         Values.store_vokzal = Integer.parseInt(mySettings.getString(settings.APP_PREFERENCES_store_vokzal, "0"));
@@ -70,6 +72,11 @@ public class StoreActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        SharedPreferences sp = getSharedPreferences("my_settings",
+                Context.MODE_PRIVATE);
+        boolean hasDark = sp.getBoolean("hasDark", true);
+        if (hasDark) setTheme(R.style.ThemeMyApplicationDark);
+        if (!hasDark) setTheme(R.style.ThemeMyApplication);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store);
         getSupportActionBar().hide();
@@ -90,9 +97,11 @@ public class StoreActivity extends AppCompatActivity {
                     TSnackbar.make(navView, "Недостаточно средств", TSnackbar.LENGTH_LONG).show();
                 }
                 SaveValues();
-                UpdateText();
                 break;
             case R.id.store_back:
+                SharedPreferences.Editor editor = this.mySettings.edit();
+                editor.putString(settings.APP_PREFERENCES_globalscore, String.valueOf(MainActivity.Values.globalscore));
+                editor.commit();
                 Intent intent_record = new Intent(StoreActivity.this, MenuActivity.class);
                 startActivity(intent_record);
                 break;
@@ -103,7 +112,6 @@ public class StoreActivity extends AppCompatActivity {
                 } else {
                     TSnackbar.make(navView, "Недостаточно средств", TSnackbar.LENGTH_LONG).show();
                 }
-                UpdateText();
                 SaveValues();
                 break;
             case R.id.store_vokzal:
@@ -113,7 +121,6 @@ public class StoreActivity extends AppCompatActivity {
                 } else {
                     TSnackbar.make(navView, "Недостаточно средств", TSnackbar.LENGTH_LONG).show();
                 }
-                UpdateText();
                 SaveValues();
                 break;
             case R.id.store_zk:
@@ -123,7 +130,6 @@ public class StoreActivity extends AppCompatActivity {
                 } else {
                     TSnackbar.make(navView, "Недостаточно средств", TSnackbar.LENGTH_LONG).show();
                 }
-                UpdateText();
                 SaveValues();
                 break;
             case R.id.store_lunapark:
@@ -143,7 +149,6 @@ public class StoreActivity extends AppCompatActivity {
                 } else {
                     TSnackbar.make(navView, "Недостаточно средств", TSnackbar.LENGTH_LONG).show();
                 }
-                UpdateText();
                 SaveValues();
                 break;
         }

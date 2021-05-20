@@ -21,7 +21,7 @@
         app:expanded="false">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
-            style="@style/Theme.MyApplication"
+            style="@style/ThemeMyApplication"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:backgroundTintMode="src_in"
@@ -164,6 +164,7 @@
         android:background="#00FFFFFF"
         android:backgroundTintMode="multiply"
         android:foreground="@drawable/baseline_arrow_back_36"
+        android:foregroundTint="?attr/colorOnSurface"
         android:foregroundTintMode="src_in"
         android:onClick="Click"
         android:scaleX="0.5"
@@ -177,7 +178,8 @@
         android:clickable="true"
         app:menu="@menu/toolbar_menu"
         app:title="@string/title_create"
-        app:titleMarginStart="56dp"></androidx.appcompat.widget.Toolbar>
+        app:titleMarginStart="56dp"
+        app:titleTextColor="?attr/colorOnSurface"></androidx.appcompat.widget.Toolbar>
 
     <LinearLayout
         android:id="@+id/linearLayoutProgress"
