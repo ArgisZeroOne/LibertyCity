@@ -18,35 +18,36 @@ import com.example.myapplication.R;
 import static com.example.myapplication.R.layout.fragment_contract;
 
 public class ContractFragment extends Fragment {
-    public void Timer(View root) {
-        new CountDownTimer(60000, 1000) {
+
+    public void Timer(View root) { // таймер для обновления данных фрагмента
+        new CountDownTimer(60000, 1000) { // таймер на 60 секунд с интервалом в 1 секунду
 
             @Override
             public void onTick(long l) {
-                MainActivity.Values val = new MainActivity.Values();
+                MainActivity.Values val = new MainActivity.Values(); // считать данные из MainActivity
+                // ↓ Инициализация элементов UI
                 Toolbar toolbar = (Toolbar) root.findViewById(R.id.toolbarfrag);
-
                 ProgressBar suspension_tool = (ProgressBar) root.findViewById(R.id.susp_prgsbar_tool);
                 ProgressBar cityhappy_tool = (ProgressBar) root.findViewById(R.id.hppy_prgsbar_tool);
                 ProgressBar citycondition_tool = (ProgressBar) root.findViewById(R.id.citycond_prgsbar_tool);
-                cityhappy_tool.setProgress((int)val.cityhappy);
-                citycondition_tool.setProgress((int)val.citycondition);
+                // ↓ обновление данных
+                cityhappy_tool.setProgress((int) val.cityhappy);
+                citycondition_tool.setProgress((int) val.citycondition);
                 suspension_tool.setProgress(val.suspension);
             }
 
             @Override
             public void onFinish() {
-                Timer(root);
+                Timer(root); // рекурсивный перезапуск таймера
             }
         }.start();
 
     }
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) { // инициализация фрагмента
         View games_view = inflater.inflate(fragment_contract, container, false);
-        Timer(games_view);
-        return games_view;
+        Timer(games_view); // запуск таймера
+        return games_view; // возврат view фрагмента
     }
 
 }

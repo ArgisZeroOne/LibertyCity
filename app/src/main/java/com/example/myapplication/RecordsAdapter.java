@@ -13,7 +13,7 @@ public class RecordsAdapter extends ArrayAdapter<MyRecords> {
 
     public RecordsAdapter(Context context, MyRecords[] arr) {
         super(context, R.layout.adapter_item, arr);
-    }
+    } // создание Адаптера
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -29,5 +29,5 @@ public class RecordsAdapter extends ArrayAdapter<MyRecords> {
         ((TextView) convertView.findViewById(R.id.textView2)).setText(String.valueOf(records.score));
 
         return convertView;
-    }
+    } // генерация View содержащего рекорд
 }

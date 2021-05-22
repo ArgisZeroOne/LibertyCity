@@ -21,20 +21,23 @@ import java.util.Arrays;
 
 public class RecordsActivity extends Activity {
 
+    void SelectTheme() {
+        SharedPreferences sp = getSharedPreferences("my_settings", Context.MODE_PRIVATE); // инициализация БД настроек
+        boolean hasDark = sp.getBoolean("hasDark", true); // получение настроек
+        if (hasDark) setTheme(R.style.ThemeMyApplicationDark); // выбор тёмной темы
+        if (!hasDark) setTheme(R.style.ThemeMyApplication); // выбор светлой темы
+    } // метод выбор темы оформеления
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        SharedPreferences sp = getSharedPreferences("my_settings",
-                Context.MODE_PRIVATE);
-        boolean hasDark = sp.getBoolean("hasDark", true);
-        if (hasDark) setTheme(R.style.ThemeMyApplicationDark);
-        if (!hasDark) setTheme(R.style.ThemeMyApplication);
+        SelectTheme();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_records);
 
         RecordsAdapter adapter = new RecordsAdapter(this, makeRecord());
         ListView lv = (ListView) findViewById(R.id.listView);
         lv.setAdapter(adapter);
-    }
+    } // метод создания Activity
 
     private void saveArrayList(String name, ArrayList<String> list) {
         SharedPreferences prefs = getSharedPreferences("Records", MODE_PRIVATE);
@@ -43,7 +46,7 @@ public class RecordsActivity extends Activity {
         for (String s : list) sb.append(s).append("<s>");
         sb.delete(sb.length() - 3, sb.length());
         editor.putString(name, sb.toString()).apply();
-    }
+    } // метод сохранения массива строк в SharedPreferences
 
     private ArrayList<String> loadArrayList(String name) {
         SharedPreferences prefs = getSharedPreferences("Records", MODE_PRIVATE);
@@ -51,7 +54,7 @@ public class RecordsActivity extends Activity {
         ArrayList<String> list = new ArrayList<>();
         list.addAll(Arrays.asList(strings));
         return list;
-    }
+    } // метод загрузки массива строк из SharedPreferences
 
     public void storeIntArray(String name, int[] array) {
         SharedPreferences.Editor edit = getSharedPreferences("NAME", Context.MODE_PRIVATE).edit();
@@ -61,7 +64,7 @@ public class RecordsActivity extends Activity {
             edit.putInt("IntValue_" + name + count++, i);
         }
         edit.commit();
-    }
+    } // метод сохранения массива чисел в SharedPreferences
 
     public int[] getFromPrefs(String name) {
         int[] ret;
@@ -72,7 +75,8 @@ public class RecordsActivity extends Activity {
             ret[i] = prefs.getInt("IntValue_" + name + i, i);
         }
         return ret;
-    }
+    } // метод загрузки массива чисел из SharedPreferences
+
     public void Click(View navView) {
 
         switch (navView.getId()) {
@@ -82,7 +86,8 @@ public class RecordsActivity extends Activity {
                 startActivity(intent_menu);
                 break;
         }
-    }
+    } // обработчик нажатий
+
     MyRecords[] makeRecord() {
 
 
@@ -114,5 +119,5 @@ public class RecordsActivity extends Activity {
             }
         }
         return arr;
-    }
+    } // создание рекорда
 }

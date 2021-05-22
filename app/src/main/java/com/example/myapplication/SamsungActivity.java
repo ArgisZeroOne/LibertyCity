@@ -25,11 +25,12 @@ public class SamsungActivity extends AppCompatActivity {
 
             }
         }.start();
-    }
+    } // таймер
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_samsung);
         getSupportActionBar().hide();
         Timer(R.layout.activity_start);
-    }
+    } // метод создания Activity
 }

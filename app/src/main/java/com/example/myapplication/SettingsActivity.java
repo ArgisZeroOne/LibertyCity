@@ -14,18 +14,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.myapplication.R;
 
 public class SettingsActivity extends AppCompatActivity {
+
+    void SelectTheme() {
+        SharedPreferences sp = getSharedPreferences("my_settings", Context.MODE_PRIVATE); // инициализация БД настроек
+        boolean hasDark = sp.getBoolean("hasDark", true); // получение настроек
+        if (hasDark) setTheme(R.style.ThemeMyApplicationDark); // выбор тёмной темы
+        if (!hasDark) setTheme(R.style.ThemeMyApplication); // выбор светлой темы
+    } // метод выбор темы оформеления
+
     protected void onCreate(Bundle savedInstanceState) {
-        SharedPreferences sp = getSharedPreferences("my_settings",
-                Context.MODE_PRIVATE);
-        boolean hasDark = sp.getBoolean("hasDark", true);
-        if (hasDark) setTheme(R.style.ThemeMyApplicationDark);
-        if (!hasDark) setTheme(R.style.ThemeMyApplication);
+        SelectTheme();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
         getSupportActionBar().hide();
-    }
+    } // метод создания Activity
 
-    private static final String MY_SETTINGS = "my_settings";
+    private static final String MY_SETTINGS = "my_settings"; // имя настроек
 
     public void Click(View navView) {
 
@@ -53,5 +57,6 @@ public class SettingsActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
         }
-    }
+    } // обработчик нажатий
+
 }

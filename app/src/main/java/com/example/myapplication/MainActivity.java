@@ -28,11 +28,11 @@ import androidx.navigation.ui.NavigationUI;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Timer;
+import java.util.Timer; // импорты
 
 public class MainActivity extends AppCompatActivity {
-    SharedPreferences mySettings;
 
+    SharedPreferences mySettings; // инициализация SharedPreferences
 
     private void saveArrayList(String name, ArrayList<String> list) {
         SharedPreferences prefs = getSharedPreferences("Records", MODE_PRIVATE);
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         for (String s : list) sb.append(s).append("<s>");
         sb.delete(sb.length() - 3, sb.length());
         editor.putString(name, sb.toString()).apply();
-    }
+    } // метод сохранения массива строк в SharedPreferences
 
     private ArrayList<String> loadArrayList(String name) {
         SharedPreferences prefs = getSharedPreferences("Records", MODE_PRIVATE);
@@ -49,12 +49,7 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<String> list = new ArrayList<>();
         list.addAll(Arrays.asList(strings));
         return list;
-    }
-    public static String getStringByIdName(Context context, String idName) {
-        Resources res = context.getResources();
-        return res.getString(res.getIdentifier(idName, "string", context.getPackageName()));
-    }
-
+    }  // метод загрузки массива строк из SharedPreferences
 
     public class Settings {
         public static final String APP_PREFERENCES = "mysettings";
@@ -80,9 +75,9 @@ public class MainActivity extends AppCompatActivity {
         public static final String APP_PREFERENCES_store_lunapark = "store_lunapark";
         public static final String APP_PREFERENCES_store_interval = "store_interval";
 
-    }
+    }  // имена настроек в SharedPreferences
 
-    Settings settings = new Settings();
+    Settings settings = new Settings(); // инициализация настроек
 
     public static class Values {
         public static boolean fabactive = false;
@@ -111,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
         public static int store_interval = 0;
         public static boolean StopStatus = false;
 
-    }
+    } // основные переменные
 
     public void SaveValues() {
         SharedPreferences.Editor editor = this.mySettings.edit();
@@ -137,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
         editor.putString(settings.APP_PREFERENCES_store_lunapark, String.valueOf(Values.store_lunapark));
         editor.putString(settings.APP_PREFERENCES_store_interval, String.valueOf(Values.store_interval));
         editor.apply();
-    }
+    } // метод сохранения настроек
 
     public void LoadValues() {
         String interval = String.valueOf(1000 + Integer.parseInt(mySettings.getString(settings.APP_PREFERENCES_store_interval, "0")));
@@ -162,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
         Values.store_zk = Integer.parseInt(mySettings.getString(settings.APP_PREFERENCES_store_zk, "0"));
         Values.store_lunapark = Integer.parseInt(mySettings.getString(settings.APP_PREFERENCES_store_lunapark, "0"));
         Values.store_interval = Integer.parseInt(mySettings.getString(settings.APP_PREFERENCES_store_interval, "0"));
-    }
+    } // метод загрузки настроек
 
     public void suspTime(View navView) {
 
@@ -179,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         }.start();
-    }
+    } // таймер подозрения
 
     public void Timer(View navView, int interval) {
 
@@ -224,32 +219,33 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-    }
+    } // основной таймер
 
     @Override
+
     public void onBackPressed() {
-    }
+    } // метод оброботки нажатия кнопки "назад" (он пустой, для блокировки этой самой кнопки)
 
     protected void onStart() {
         super.onStart();
         Values.StopStatus = true;
-    }
+    } // метод старта Activity
 
     protected void onRestart() {
         super.onRestart();
         Values.StopStatus = true;
-    }
+    } // метод перезапуска Activity
 
     protected void onStop() {
         super.onStop();
         Values.StopStatus = true;
-    }
+    } // метод остановки Activity
 
     protected void onPause() {
         super.onPause();
         Values.StopStatus = true;
         SaveValues();
-    }
+    } // метод паузы Activity
 
     protected void onResume() {
         super.onResume();
@@ -257,38 +253,44 @@ public class MainActivity extends AppCompatActivity {
         LoadValues();
         suspTime(findViewById(android.R.id.content));
         Timer(findViewById(android.R.id.content), Values.Interval);
-    }
+    } // метод возобновления Activity
 
     protected void onDestroy() {
         super.onDestroy();
         Values.StopStatus = true;
         SaveValues();
-    }
+    } // метод разрушения Activity
 
     public static int Store() {
         int store_value = Values.store_houses + Values.store_lunapark + Values.store_vokzal + Values.store_zdroads + Values.store_zk;
         return store_value;
-    }
+    } // метод обработки значений из внутриигрового магазина
+
+    void SelectTheme() {
+        SharedPreferences sp = getSharedPreferences("my_settings", Context.MODE_PRIVATE); // инициализация БД настроек
+        boolean hasDark = sp.getBoolean("hasDark", true); // получение настроек
+        if (hasDark) setTheme(R.style.ThemeMyApplicationDark); // выбор тёмной темы
+        if (!hasDark) setTheme(R.style.ThemeMyApplication); // выбор светлой темы
+    } // метод выбор темы оформеления
 
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
-        SharedPreferences sp = getSharedPreferences("my_settings",
-                Context.MODE_PRIVATE);
-        boolean hasDark = sp.getBoolean("hasDark", true);
-        if (hasDark) setTheme(R.style.ThemeMyApplicationDark);
-        if (!hasDark) setTheme(R.style.ThemeMyApplication);
+        SelectTheme(); // выбор темы оформления
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
+        // ↓ конфигурация навигации
         BottomNavigationView navView = findViewById(R.id.toolbar);
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(R.id.navigation_care, R.id.navigation_create, R.id.navigation_gov, R.id.navigation_contract, R.id.navigation_finance).build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
+        // ↓ инициализация SharedPreferences
         SharedPreferences sharedPreferences = getSharedPreferences(settings.APP_PREFERENCES, 0);
         mySettings = sharedPreferences;
-        LoadValues();
-    }
+        LoadValues(); // загрузка значений
+    } // метод создания Activity
 
     public void dead() {
         Values.tempscore = Values.scores;
@@ -313,7 +315,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
         this.finish();
 
-    }
+    } // метод обработки "смерти" игрока
 
     public void EventHandler(View navView) {
         if (Values.suspension <= 0) {
@@ -358,7 +360,7 @@ public class MainActivity extends AppCompatActivity {
             Values.DeadStatus = true;
         }
 
-    }
+    } // метод обработчика событий
 
     public void Click(View navView) {
         class ClickObj {
@@ -531,7 +533,7 @@ public class MainActivity extends AppCompatActivity {
 
                 break;
         }
-    }
+    } // обработчик нажатий
 
     public void onSettingsMenuClick(MenuItem item) {
         switch (item.getItemId()) {
@@ -552,5 +554,5 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-    }
+    } // метод определения нажатий в контекстном меню
 }

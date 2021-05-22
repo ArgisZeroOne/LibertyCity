@@ -15,6 +15,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class MenuActivity extends AppCompatActivity {
+
+    void SelectTheme() {
+        SharedPreferences sp = getSharedPreferences("my_settings", Context.MODE_PRIVATE); // инициализация БД настроек
+        boolean hasDark = sp.getBoolean("hasDark", true); // получение настроек
+        if (hasDark) setTheme(R.style.ThemeMyApplicationDark); // выбор тёмной темы
+        if (!hasDark) setTheme(R.style.ThemeMyApplication); // выбор светлой темы
+    } // метод выбор темы оформеления
+
     private void saveArrayList(String name, ArrayList<String> list) {
         SharedPreferences prefs = getSharedPreferences("Records", MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
@@ -22,7 +30,7 @@ public class MenuActivity extends AppCompatActivity {
         for (String s : list) sb.append(s).append("<s>");
         sb.delete(sb.length() - 3, sb.length());
         editor.putString(name, sb.toString()).apply();
-    }
+    } // метод сохранения массива строк в SharedPreferences
 
     private ArrayList<String> loadArrayList(String name) {
         SharedPreferences prefs = getSharedPreferences("Records", MODE_PRIVATE);
@@ -30,7 +38,7 @@ public class MenuActivity extends AppCompatActivity {
         ArrayList<String> list = new ArrayList<>();
         list.addAll(Arrays.asList(strings));
         return list;
-    }
+    } // метод загрузки массива строк из SharedPreferences
 
     public void storeIntArray(String name, int[] array) {
         SharedPreferences.Editor edit = getSharedPreferences("NAME", Context.MODE_PRIVATE).edit();
@@ -40,7 +48,7 @@ public class MenuActivity extends AppCompatActivity {
             edit.putInt("IntValue_" + name + count++, i);
         }
         edit.commit();
-    }
+    } // метод сохранения массива чисел в SharedPreferences
 
     public int[] getFromPrefs(String name) {
         int[] ret;
@@ -51,16 +59,14 @@ public class MenuActivity extends AppCompatActivity {
             ret[i] = prefs.getInt("IntValue_" + name + i, i);
         }
         return ret;
-    }
+    } // метод загрузки массива чисел из SharedPreferences
 
-    private static final String MY_SETTINGS = "my_settings";
+    private static final String MY_SETTINGS = "my_settings"; // имя настроек
 
     protected void onCreate(Bundle savedInstanceState) {
         SharedPreferences sp = getSharedPreferences(MY_SETTINGS,
                 Context.MODE_PRIVATE);
-        boolean hasDark = sp.getBoolean("hasDark", true);
-        if (hasDark) setTheme(R.style.ThemeMyApplicationDark);
-        if (!hasDark) setTheme(R.style.ThemeMyApplication);
+        SelectTheme();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
         getSupportActionBar().hide();
@@ -84,7 +90,7 @@ public class MenuActivity extends AppCompatActivity {
             e.putBoolean("hasVisited", true);
             e.commit();
         }
-    }
+    } // метод создания Activity
 
     public void MenuClick(View view) {
         switch (view.getId()) {
@@ -114,6 +120,6 @@ public class MenuActivity extends AppCompatActivity {
 
 
         }
-    }
+    } // обработчик нажатий
 
 }

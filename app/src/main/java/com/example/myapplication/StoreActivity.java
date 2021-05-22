@@ -15,7 +15,15 @@ import com.androidadvance.topsnackbar.TSnackbar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class StoreActivity extends AppCompatActivity {
-    SharedPreferences mySettings;
+
+    void SelectTheme() {
+        SharedPreferences sp = getSharedPreferences("my_settings", Context.MODE_PRIVATE); // инициализация БД настроек
+        boolean hasDark = sp.getBoolean("hasDark", true); // получение настроек
+        if (hasDark) setTheme(R.style.ThemeMyApplicationDark); // выбор тёмной темы
+        if (!hasDark) setTheme(R.style.ThemeMyApplication); // выбор светлой темы
+    } // метод выбор темы оформеления
+
+    SharedPreferences mySettings; // инициализация SharedPreferences
 
     public class Settings {
         public static final String APP_PREFERENCES = "mysettings";
@@ -26,7 +34,7 @@ public class StoreActivity extends AppCompatActivity {
         public static final String APP_PREFERENCES_store_zk = "store_zk";
         public static final String APP_PREFERENCES_store_lunapark = "store_lunapark";
         public static final String APP_PREFERENCES_store_interval = "store_interval";
-    }
+    } // имена настроек в SharedPreferences
 
     public static class Values {
         public static int store_houses = 0;
@@ -37,14 +45,14 @@ public class StoreActivity extends AppCompatActivity {
         public static int store_interval = 0;
         public static int globalscore = 0;
 
-    }
+    } // основные переменные
 
-    Settings settings = new Settings();
+    Settings settings = new Settings(); // инициализация настроек
 
     public void UpdateText() {
         TextView text = (TextView) findViewById(R.id.store_score);
         text.setText(String.valueOf(Values.globalscore));
-    }
+    } // метод обновления количества очков на экране
 
     public void SaveValues() {
         SharedPreferences.Editor editor = this.mySettings.edit();
@@ -57,7 +65,7 @@ public class StoreActivity extends AppCompatActivity {
         editor.putString(settings.APP_PREFERENCES_store_interval, String.valueOf(Values.store_interval));
         editor.apply();
         UpdateText();
-    }
+    } // метод сохранения настроек
 
     public void LoadValues() {
         Values.globalscore = Integer.parseInt(mySettings.getString(settings.APP_PREFERENCES_globalscore, "1000"));
@@ -68,15 +76,12 @@ public class StoreActivity extends AppCompatActivity {
         Values.store_lunapark = Integer.parseInt(mySettings.getString(settings.APP_PREFERENCES_store_lunapark, "0"));
         Values.store_interval = Integer.parseInt(mySettings.getString(settings.APP_PREFERENCES_store_interval, "0"));
 
-    }
+    } // метод загрузки настроек
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        SharedPreferences sp = getSharedPreferences("my_settings",
-                Context.MODE_PRIVATE);
-        boolean hasDark = sp.getBoolean("hasDark", true);
-        if (hasDark) setTheme(R.style.ThemeMyApplicationDark);
-        if (!hasDark) setTheme(R.style.ThemeMyApplication);
+        SelectTheme();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store);
         getSupportActionBar().hide();
@@ -84,7 +89,7 @@ public class StoreActivity extends AppCompatActivity {
         mySettings = sharedPreferences;
         LoadValues();
         UpdateText();
-    }
+    } // метод создания Activity
 
     public void Click(View navView) {
 
@@ -152,6 +157,6 @@ public class StoreActivity extends AppCompatActivity {
                 SaveValues();
                 break;
         }
-    }
+    } // обработчик нажатий
 
 }
