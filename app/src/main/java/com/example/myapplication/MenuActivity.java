@@ -103,8 +103,20 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(intent_about);
                 break;
             case R.id.start:
-                Intent intent_start = new Intent(MenuActivity.this, MainActivity.class);
-                startActivity(intent_start);
+                SharedPreferences sp = getSharedPreferences(MY_SETTINGS,
+                        Context.MODE_PRIVATE);
+                boolean tutorialVisited = sp.getBoolean("tutorialVisited", false);
+                if(!tutorialVisited){
+                    Intent intent_start = new Intent(MenuActivity.this, TutorialActivity.class);
+                    startActivity(intent_start);
+                    SharedPreferences.Editor e = sp.edit();
+                    e.putBoolean("tutorialVisited", true);
+                    e.commit();
+                } else {
+                    Intent intent_startgame = new Intent(MenuActivity.this, MainActivity.class);
+                    startActivity(intent_startgame);
+                }
+
                 break;
             case R.id.records:
                 Intent intent_records = new Intent(MenuActivity.this, RecordsActivity.class);

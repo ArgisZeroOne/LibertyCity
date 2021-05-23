@@ -65,11 +65,12 @@
                 android:typeface="normal"
                 app:cornerRadius="0dp"
                 app:icon="@drawable/twotone_paid_24"
-                app:iconTint="@color/rally_yellow"
+                app:iconTint="@color/yellow"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:rippleColor="@color/yellow" />
 
             <Button
                 android:id="@+id/finance_optimazation"
@@ -91,7 +92,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/finance_nalog" />
+                app:layout_constraintTop_toBottomOf="@id/finance_nalog"
+                app:rippleColor="@color/rally_green_primary" />
 
             <Button
                 android:id="@+id/finance_pin"
@@ -109,11 +111,12 @@
                 android:typeface="normal"
                 app:cornerRadius="0dp"
                 app:icon="@drawable/twotone_sentiment_very_dissatisfied_24"
-                app:iconTint="@color/rally_surface"
+                app:iconTint="@color/reply_orange"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/finance_optimazation" />
+                app:layout_constraintTop_toBottomOf="@id/finance_optimazation"
+                app:rippleColor="@color/reply_orange" />
 
             <Button
                 android:id="@+id/finance_pile"
@@ -135,7 +138,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/finance_pin" />
+                app:layout_constraintTop_toBottomOf="@id/finance_pin"
+                app:rippleColor="@color/rally_orange" />
 
             <TextView
                 android:id="@+id/text_notifications"
@@ -214,7 +218,7 @@
                 android:progressDrawable="@drawable/progressbar"
                 android:progressTint="@color/blue"
                 android:secondaryProgress="100"
-                android:secondaryProgressTint="@color/dark_blue"
+                android:secondaryProgressTint="?attr/backgroundColor"
                 android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -240,7 +244,7 @@
                 android:progressDrawable="@drawable/progressbar"
                 android:progressTint="@color/blue"
                 android:secondaryProgress="100"
-                android:secondaryProgressTint="@color/dark_blue"
+                android:secondaryProgressTint="?attr/backgroundColor"
                 android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -266,7 +270,7 @@
                 android:progressDrawable="@drawable/progressbar"
                 android:progressTint="@color/blue"
                 android:secondaryProgress="100"
-                android:secondaryProgressTint="@color/dark_blue"
+                android:secondaryProgressTint="?attr/backgroundColor"
                 android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

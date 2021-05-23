@@ -71,7 +71,8 @@
                 app:iconTint="@color/rally_green_primary"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:rippleColor="@color/rally_green_primary" />
 
             <Button
                 android:id="@+id/create_roads"
@@ -87,10 +88,11 @@
                 android:typeface="normal"
                 app:cornerRadius="0dp"
                 app:icon="@drawable/twotone_time_to_leave_24"
-                app:iconTint="@color/rally_surface"
+                app:iconTint="@color/yellow"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/create_park" />
+                app:layout_constraintTop_toBottomOf="@+id/create_park"
+                app:rippleColor="@color/yellow" />
 
             <Button
                 android:id="@+id/create_zdroads"
@@ -109,7 +111,8 @@
                 app:iconTint="@color/rally_orange"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/create_roads" />
+                app:layout_constraintTop_toBottomOf="@+id/create_roads"
+                app:rippleColor="@color/rally_orange" />
 
             <Button
                 android:id="@+id/create_vokzal"
@@ -128,7 +131,8 @@
                 app:iconTint="@color/rally_blue"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/create_zdroads" />
+                app:layout_constraintTop_toBottomOf="@+id/create_zdroads"
+                app:rippleColor="@color/rally_blue" />
 
             <TextView
                 android:id="@+id/text_notifications"
@@ -209,7 +213,7 @@
                 android:progressDrawable="@drawable/progressbar"
                 android:progressTint="@color/blue"
                 android:secondaryProgress="100"
-                android:secondaryProgressTint="@color/dark_blue"
+                android:secondaryProgressTint="?attr/backgroundColor"
                 android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -235,7 +239,7 @@
                 android:progressDrawable="@drawable/progressbar"
                 android:progressTint="@color/blue"
                 android:secondaryProgress="100"
-                android:secondaryProgressTint="@color/dark_blue"
+                android:secondaryProgressTint="?attr/backgroundColor"
                 android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -261,7 +265,7 @@
                 android:progressDrawable="@drawable/progressbar"
                 android:progressTint="@color/blue"
                 android:secondaryProgress="100"
-                android:secondaryProgressTint="@color/dark_blue"
+                android:secondaryProgressTint="?attr/backgroundColor"
                 android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

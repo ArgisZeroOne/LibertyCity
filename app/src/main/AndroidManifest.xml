@@ -13,10 +13,19 @@
         <activity
             android:name=".StartActivity"
             android:label="@string/app_name"
-            android:noHistory="true">
-            android:screenOrientation="portrait"
+            android:noHistory="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
+        <activity
+            android:name=".TutorialActivity"
+            android:label="@string/app_name"
+            android:noHistory="true"
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".SettingsActivity"
             android:label="@string/app_name"
@@ -30,31 +39,30 @@
         <activity
             android:name=".MenuActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait"> <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter></activity>
-        <activity
-            android:name=".RecordsActivity"
-            android:label="@string/app_name"
-            android:screenOrientation="portrait"></activity>
-        <activity
-            android:name=".AboutActivity"
-            android:label="@string/app_name"
-            android:screenOrientation="portrait"></activity>
-        <activity
-            android:name=".StoreActivity"
-            android:label="@string/app_name"
-            android:screenOrientation="portrait"></activity>
-        <activity
-            android:name=".DeadActivity"
-            android:label="@string/app_name"
-            android:screenOrientation="portrait"></activity>
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait">
+    </activity>
 
-    </application>
+    <activity
+        android:name=".RecordsActivity"
+        android:label="@string/app_name"
+        android:screenOrientation="portrait"></activity>
+    <activity
+        android:name=".AboutActivity"
+        android:label="@string/app_name"
+        android:screenOrientation="portrait"></activity>
+    <activity
+        android:name=".StoreActivity"
+        android:label="@string/app_name"
+        android:screenOrientation="portrait"></activity>
+    <activity
+        android:name=".DeadActivity"
+        android:label="@string/app_name"
+        android:screenOrientation="portrait"></activity>
+    <activity
+        android:name=".MainActivity"
+        android:label="@string/app_name"
+        android:screenOrientation="portrait"></activity>
 
-</manifest>
+</application>
+
+    </manifest>
