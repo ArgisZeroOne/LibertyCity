@@ -43,8 +43,8 @@
     <string name="settings">Settings</string>
     <string name="store">Store</string>
     <string name="records">Records</string>
-    <string name="abouttext1">An interesting urban planning clicker created on the knee (Android Studio) as a final project for IT Samsung School. The author really hopes to get at least 8 points(Well, please, I really want a certificate of a special sample;) ). P.S. I want to eat something, I don\'t mind if they feed me something. P. P. S. This section was created purely for the symmetry of the main menu, so don\'t blame the content.</string>
-    <string name="abouttext2">Made by Nikita \"Fukurou\" Bekkel. (Yes, yes, I wanted to show off)</string>
+    <string name="abouttext1">"An interesting urban planning clicker created in the Android Studio. "</string>
+    <string name="abouttext2">"Made by Nikita \"Fukurou\" Bekkel. "</string>
     <string name="entername">Enter your name</string>
     <string name="addtorecords">Add the result to the high score table</string>
     <string name="restart">Restart</string>

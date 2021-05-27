@@ -43,8 +43,8 @@
     <string name="settings">Настройки</string>
     <string name="store">Магазин</string>
     <string name="records">Рекорды</string>
-    <string name="abouttext1">Интересный градостроительный кликер, созданный на коленке(Android Studio) в качестве итогового проекта для IT Samsung School. Автор очень надеется получить не менее 8 баллов(Ну пожалуйста,очень хочется себе аттестат особого образца;) ). P.S. Хочу кушац, не против если меня накормят чем-нибудь. P.P.S. Этот раздел был создан чисто для симметрии главного меню, так что за содержание не обессудьте.</string>
-    <string name="abouttext2">Made by Nikita \"Fukurou\" Bekkel. (Да-да, я захотел выпендриться)</string>
+    <string name="abouttext1">Интересный градостроительный кликер, созданный в Android Studio.</string>
+    <string name="abouttext2">"Made by Nikita \"Fukurou\" Bekkel. "</string>
     <string name="entername">Введите имя</string>
     <string name="addtorecords">Добавить результат в таблицу рекордов</string>
     <string name="restart">Начать заново</string>
